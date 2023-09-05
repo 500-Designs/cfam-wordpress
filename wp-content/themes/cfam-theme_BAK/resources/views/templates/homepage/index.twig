@@ -1,0 +1,47 @@
+{% extends '_layout.twig' %}
+
+{% block content %}
+<style>
+    @media only screen and (min-width: 320px) {
+        .home-hero {
+            background-image: url({{ fields.hero_image_sm.url }});
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        .home-hero {
+            background-image: url({{ fields.hero_image_md.url }});
+        }
+    }
+
+    @media only screen and (min-width: 1400px) {
+        .home-hero {
+            background-image: url({{ fields.hero_image_lg.url }});
+        }
+    }
+</style>
+<section class="home-hero">
+    <div class=" container">
+        <div class="home-hero-accent text-white">
+            <div class="navbar-brand d-none d-lg-block">
+                <a href="{{ site.url }}">
+                    {{ logo_light }}
+                </a>
+            </div>
+            <div class="container">
+                <h4>{{ fields.hero_top_heading }}</h4>
+                <h2 class="h1 text-uppercase">{{ fields.hero_heading }}</h2>
+                <p>{{ fields.hero_sub_heading }}</p>
+                <a href="{{ fields.hero_button_link }}" type="button" class="btn btn-labeled btn-secondary">{{
+                    fields.hero_button_text }}<span class="btn-label label-after">
+                        <i class="icon-angle-right"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ blocks }}
+
+{% endblock %}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+        {# 🚧 {{ wp_title ? wp_title ~ ' | ' }} {{ site.name }} #}
+        {{ wp_title ? wp_title }}
+    </title>
+
+
+    <style>
+        @font-face {
+            font-family: "Helvetica Neue";
+            src: url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Medium.eot");
+            src: url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Medium.eot?#iefix") format("embedded-opentype"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Medium.woff2") format("woff2"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Medium.woff") format("woff"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Medium.ttf") format("truetype"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Medium.svg#HelveticaNeue-Medium") format("svg");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Helvetica Neue";
+            src: url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Bold.eot");
+            src: url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Bold.woff2") format("woff2"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Bold.woff") format("woff"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Bold.ttf") format("truetype"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-Bold.svg#HelveticaNeue-Bold") format("svg");
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Helvetica Neue";
+            src: url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue.eot");
+            src: url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue.woff2") format("woff2"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue.woff") format("woff"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue.ttf") format("truetype"),
+                url("/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue.svg#HelveticaNeue") format("svg");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Helvetica Neue Condensed Bold';
+            src: url('/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-CondensedBold.eot');
+            src: url('/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-CondensedBold.eot?#iefix') format('embedded-opentype'),
+                url('/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-CondensedBold.woff2') format('woff2'),
+                url('/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-CondensedBold.woff') format('woff'),
+                url('/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-CondensedBold.ttf') format('truetype'),
+                url('/wp-content/themes/lucera-bootstrap/dist/styles/fonts/HelveticaNeue-CondensedBold.svg#HelveticaNeue-CondensedBold') format('svg');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+
+
+        @font-face {
+            font-family: 'icomoon';
+            src: url('/wp-content/themes/lucera-bootstrap/dist/styles/fonts/icomoon.eot?75p0ri');
+            src: url('/wp-content/themes/lucera-bootstrap/dist/styles/fonts/icomoon.eot?75p0ri#iefix') format('embedded-opentype'),
+                url('/wp-content/themes/lucera-bootstrap/dist/styles/fonts/icomoon.ttf?75p0ri') format('truetype'),
+                url('/wp-content/themes/lucera-bootstrap/dist/styles/fonts/icomoon.woff?75p0ri') format('woff'),
+                url('/wp-content/themes/lucera-bootstrap/dist/styles/fonts/icomoon.svg?75p0ri#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+    </style>
+
+    {# Start favicons #}
+    {# {% set faviconPath = theme.link ~ '/static/favicons/' %} #}
+
+    {# Generics #}
+    {#
+    <link rel="icon" href="{{ faviconPath }}favicon_32x32.png" sizes="32x32" />
+    <link rel="icon" href="{{ faviconPath }}favicon_128x128.png" sizes="128x128" />
+    <link rel="icon" href="{{ faviconPath }}favicon_192x192" sizes="192x192" /> #}
+
+    {# Android #}
+    {#
+    <link rel="shortcut icon" href="{{ faviconPath }}favicon_196x196" sizes="196x196" /> #}
+
+    {# iOS #}
+    {#
+    <link rel="apple-touch-icon" href="{{ faviconPath }}favicon_152x152" sizes="152x152" />
+    <link rel="apple-touch-icon" href="{{ faviconPath }}favicon_167x167" sizes="167x167" />
+    <link rel="apple-touch-icon" href="{{ faviconPath }}favicon_180x180" sizes="180x180" /> #}
+
+    {# End favicons #}
+
+    {# Fonts should be loaded here with display: swap #}
+    {#
+    <link rel="stylesheet" href="https://use.typekit.net/cqt6vbo.css" /> #}
+
+    {# Global site tag (gtag.js) - Google Analytics #}
+    {{ ga_tracking_script }}
+
+    {# Keep WP_Head at the bottom #}
+    {{ fn('wp_head') }}
+</head>
+
+<body class="{{ body_class }}">
+    <a href="#main" class="sr-only">Skip to main content</a>
+
+    {# Set pages that will have the
+    trasparent header. Use page slug #}
+    {# {%
+    set transparentHeaderPages = [
+    'contact-us',
+    ]
+    %}
+
+    {% if post.slug in transparentHeaderPages %}
+    {% include './resources/views/global/_header-transparent.twig' %}
+    {% else %}
+    {% include './resources/views/global/_header.twig' %}
+    {% endif %} #}
+
+
+    {% include './resources/views/global/_header.twig' %}
+
+    <main id="main" class="">
+        {# Main content #}
+        {% block content %}
+
+        {% endblock %}
+
+        {# Sample include file with variables #}
+        {# {% include './resources/views/_includes/_sample.twig' with {
+        variable: 'test'
+        } %} #}
+    </main>
+
+    {% include './resources/views/global/_footer.twig' %}
+    {{ fn('wp_footer') }}
+
+</body>
+
+
+</html>

@@ -1,0 +1,383 @@
+<section class="tab-container home-hero-data counter-section bg-gray nav-section">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-10 col-lg-8">
+				<h4>{{ fields.heading }}</h4>
+			</div>
+			<div class="col-lg-4 d-flex justify-content-lg-end mt-4 mt-lg-0 docs-links">
+				{% if fields.fact_sheet_1 %}
+					<a href="{{ fields.fact_sheet_1 }}" type="button" class="btn btn-labeled btn-link p-0" download>
+						<span class="btn-label label-before">
+							<i class="icon-file"></i>
+						</span>
+						Fact Sheet - Class A and C Shares
+					</a>
+				{% endif %}
+				{% if fields.fact_sheet_2  %}
+					<a href="{{ fields.fact_sheet_2 }}" type="button" class="btn btn-labeled btn-link p-0" download>
+						<span class="btn-label label-before">
+							<i class="icon-file"></i>
+						</span>
+						Fact Sheet - Class I Share
+					</a>
+				{% endif %}
+
+				{% if fields.prospectus_link  %}
+					<a href="{{ fields.prospectus_link }}" type="button" class="btn btn-labeled btn-link p-0 ms-4" download>
+						<span class="btn-label label-before">
+							<i class="icon-file"></i>
+						</span>
+						Prospectus - Class A and C Shares
+					</a>
+				{% endif %}
+				{% if fields.prospectus_2_link  %}
+					<a href="{{ fields.prospectus_2_link }}" type="button" class="btn btn-labeled btn-link p-0 ms-4" download>
+						<span class="btn-label label-before">
+							<i class="icon-file"></i>
+						</span>
+						Prospectus - Class I Share
+					</a>
+				{% endif %}
+			</div>
+		</div>
+
+		<div id="tabs-nav-select" class="home-hero-data-dropdown d-lg-flex align-items-center">
+			<select id="tabs-csv-select" class='form-select form-select-lg' csv-class-select>
+				<option value="no-sales-load" selected>{{ __("CLASS A (CAFIX) - No Sales Load", "lucera-bootstrap") }}</option>
+				{% if csv.load_flag == "true" %}
+					<option value="with-sales-load">{{ __("CLASS A (CAFIX) - With Sales Load", "lucera-bootstrap") }}</option>
+				{% endif %}
+				{% if class_C %}
+					<option value="class-c">CLASS C (CFCIX)</option>
+					{# <option value="class-c">CLASS C (CFCIX) - No Sales Load</option>
+					<option value="class-c-with-load">CLASS C (CFCIX) - With Sales Load</option> #}
+				{% endif %}				
+				{% if class_I %}
+					<option value="class-i">CLASS I (CFIIX)</option>
+					{# <option value="class-i">CLASS I (CFIIX) - No Sales Load</option>
+					<option value="class-i-with-load">CLASS I (CFIIX) - With Sales Load</option> #}
+				{% endif %}
+
+			</select>
+			<p class="text-paragraph--small mt-2 mt-lg-0 ms-lg-3 overview-report-date">{{ __("As of", "lucera-bootstrap") }}
+				{{ csv.date }}</p>
+		</div>
+
+		<div id="no-sales-load" class='tab-content' csv-class-tab>
+			<div class="home-hero-data-table d-lg-flex justify-content-lg-between">
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("Nav", "lucera-bootstrap") }}</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ csv.nav }}</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">
+						{{ __("1 Day NAV Change", "lucera-bootstrap") }}
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ csv.nav_change }}
+							({{ csv.percent_change_1d }}<sup>%</sup>)</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("YTD Total Return", "lucera-bootstrap") }}<div class="tooltip ms-1">
+							<i class="icon-info text-paragraph--small text-blue2"></i>
+							<span tooltiptext class="tooltiptext text-reset text-darkgray">{{ __("YTD (year to date) is a period, starting from the beginning of the current calendar year, and continuing up to the prior day's close.", "lucera-bootstrap") }}</span>
+						</div>
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							{% if csv.ytd_return_noload %}
+								{{ csv.ytd_return_noload }}<sup>%</sup>
+							{% else %}
+								N/A
+							{% endif %}
+						</h3>
+
+					</div>
+				</div>
+				<div class="hero-data-table-item d-none">
+					<p class="text-eyebrow text-uppercase text-blue2">{{ __("Annualized Distribution Rate (NAV)", "lucera-bootstrap") }}</p>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							{{ csv.distribution_factor }}<sup>%</sup>
+						</h3>
+						<div class="tooltip ms-3">
+							<i class="icon-info"></i>
+							<span tooltiptext class="tooltiptext">{{ __("Distribution rates are not guaranteed. They are calculated by annualizing the most recent distribution per share and diving by the NAV as of the reported date.<br /><br /> Distributions may be comprised of ordinary income, net capital gains, and/or a return of capital (ROC) of your investment in the fund. Because the distribution rate may include a ROC, it should not be confused with yield or income. ", "lucera-bootstrap") }}</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="with-sales-load" class='tab-content' csv-class-tab>
+			<div class="home-hero-data-table d-lg-flex justify-content-lg-between">
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("Nav", "lucera-bootstrap") }}</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ csv.nav }}</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">
+						{{ __("1 Day NAV Change", "lucera-bootstrap") }}
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ csv.nav_change }}
+							({{ csv.percent_change_1d }}<sup>%</sup>)</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("YTD Total Return", "lucera-bootstrap") }}<div class="tooltip ms-1">
+							<i class="icon-info text-paragraph--small text-blue2"></i>
+							<span tooltiptext class="tooltiptext text-reset text-darkgray">{{ __("YTD (year to date) is a period, starting from the beginning of the current calendar year, and continuing up to the prior day's close.", "lucera-bootstrap") }}</span>
+						</div>
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">{{ csv.ytd_return_load }}<sup>%</sup>
+						</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item d-none">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("Annualized Distribution Rate (NAV)", "lucera-bootstrap") }})</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							{{ csv.distribution_factor }}<sup>%</sup>
+						</h3>
+						<div class="tooltip ms-3">
+							<i class="icon-info"></i>
+							<span tooltiptext class="tooltiptext">{{ __("Distribution rates are not guaranteed. They are calculated by annualizing the most recent distribution per share and diving by the NAV as of the reported date.<br /><br /> Distributions may be comprised of ordinary income, net capital gains, and/or a return of capital (ROC) of your investment in the fund. Because the distribution rate may include a ROC, it should not be confused with yield or income. ", "lucera-bootstrap") }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="class-i" class='tab-content' csv-class-tab>
+			<div class="home-hero-data-table d-lg-flex justify-content-lg-between">
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("Nav", "lucera-bootstrap") }}</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ class_I.NAV }}</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">
+						{{ __("1 Day NAV Change", "lucera-bootstrap") }}
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ class_I.NAV_Change }}
+							({{ class_I.Percent_Change_1D }}<sup>%</sup>)</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("YTD Total Return", "lucera-bootstrap") }}<div class="tooltip ms-1">
+							<i class="icon-info text-paragraph--small text-blue2"></i>
+							<span tooltiptext class="tooltiptext text-reset text-darkgray">{{ __("YTD (year to date) is a period, starting from the beginning of the current calendar year, and continuing up to the prior day's close.", "lucera-bootstrap") }}</span>
+						</div>
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							{% if class_I.YTD_Return_NoLoad %}
+								{{ class_I.YTD_Return_NoLoad }}<sup>%</sup>
+							{% else %}
+								N/A
+							{% endif %}
+						</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item d-none">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("Annualized Distribution Rate (NAV)", "lucera-bootstrap") }})</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							{{ class_I.Distribution_Factor }}<sup>%</sup>
+						</h3>
+						<div class="tooltip ms-3">
+							<i class="icon-info"></i>
+							<span tooltiptext class="tooltiptext">{{ __("Distribution rates are not guaranteed. They are calculated by annualizing the most recent distribution per share and diving by the NAV as of the reported date.<br /><br /> Distributions may be comprised of ordinary income, net capital gains, and/or a return of capital (ROC) of your investment in the fund. Because the distribution rate may include a ROC, it should not be confused with yield or income. ", "lucera-bootstrap") }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{# <div id="class-i-with-load" class='tab-content' csv-class-tab>
+			<div class="home-hero-data-table d-lg-flex justify-content-lg-between">
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("Nav", "lucera-bootstrap") }}</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ class_I.NAV }}</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">
+						{{ __("1 Day NAV Change", "lucera-bootstrap") }}
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ class_I.NAV_Change }}
+							({{ class_I.Percent_Change_1D }}<sup>%</sup>)</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("YTD Total Return", "lucera-bootstrap") }}<div class="tooltip ms-1">
+							<i class="icon-info text-paragraph--small text-blue2"></i>
+							<span tooltiptext class="tooltiptext text-reset text-darkgray">{{ __("YTD (year to date) is a period, starting from the beginning of the current calendar year, and continuing up to the prior day's close.", "lucera-bootstrap") }}</span>
+						</div>
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							{% if class_I.YTD_Return_Load %}
+								{{ class_I.YTD_Return_Load }}<sup>%</sup>
+							{% else %}
+								N/A
+							{% endif %}
+						</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item d-none">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("Annualized Distribution Rate (NAV)", "lucera-bootstrap") }})</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							{{ class_I.Distribution_Factor }}<sup>%</sup>
+						</h3>
+						<div class="tooltip ms-3">
+							<i class="icon-info"></i>
+							<span tooltiptext class="tooltiptext">{{ __("Distribution rates are not guaranteed. They are calculated by annualizing the most recent distribution per share and diving by the NAV as of the reported date.<br /><br /> Distributions may be comprised of ordinary income, net capital gains, and/or a return of capital (ROC) of your investment in the fund. Because the distribution rate may include a ROC, it should not be confused with yield or income. ", "lucera-bootstrap") }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> #}
+
+
+		<div id="class-c" class='tab-content' csv-class-tab>
+			<div class="home-hero-data-table d-lg-flex justify-content-lg-between">
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("Nav", "lucera-bootstrap") }}</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ class_C.NAV }}</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">
+						{{ __("1 Day NAV Change", "lucera-bootstrap") }}
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ class_C.NAV_Change }}
+							({{ class_C.Percent_Change_1D }}<sup>%</sup>)</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("YTD Total Return", "lucera-bootstrap") }}<div class="tooltip ms-1">
+							<i class="icon-info text-paragraph--small text-blue2"></i>
+							<span tooltiptext class="tooltiptext text-reset text-darkgray">{{ __("YTD (year to date) is a period, starting from the beginning of the current calendar year, and continuing up to the prior day's close.", "lucera-bootstrap") }}</span>
+						</div>
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							{% if class_C.YTD_Return_NoLoad %}
+								{{ class_C.YTD_Return_NoLoad }}<sup>%</sup>
+							{% else %}
+								N/A
+							{% endif %}
+						</h3>					
+					</div>
+				</div>
+				<div class="hero-data-table-item d-none">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("Annualized Distribution Rate (NAV)", "lucera-bootstrap") }})</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							{{ class_C.Distribution_Factor }}<sup>%</sup>
+						</h3>
+						<div class="tooltip ms-3">
+							<i class="icon-info"></i>
+							<span tooltiptext class="tooltiptext">{{ __("Distribution rates are not guaranteed. They are calculated by annualizing the most recent distribution per share and diving by the NAV as of the reported date.<br /><br /> Distributions may be comprised of ordinary income, net capital gains, and/or a return of capital (ROC) of your investment in the fund. Because the distribution rate may include a ROC, it should not be confused with yield or income. ", "lucera-bootstrap") }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{# <div id="class-c-with-load" class='tab-content' csv-class-tab>
+			<div class="home-hero-data-table d-lg-flex justify-content-lg-between">
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("Nav", "lucera-bootstrap") }}</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ class_C.NAV }}</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">
+						{{ __("1 Day NAV Change", "lucera-bootstrap") }}
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							<sup>$</sup>
+							{{ class_C.NAV_Change }}
+							({{ class_C.Percent_Change_1D }}<sup>%</sup>)</h3>
+					</div>
+				</div>
+				<div class="hero-data-table-item">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("YTD Total Return", "lucera-bootstrap") }}<div class="tooltip ms-1">
+							<i class="icon-info text-paragraph--small text-blue2"></i>
+							<span tooltiptext class="tooltiptext text-reset text-darkgray">{{ __("YTD (year to date) is a period, starting from the beginning of the current calendar year, and continuing up to the prior day's close.", "lucera-bootstrap") }}</span>
+						</div>
+					</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							{% if class_C.YTD_Return_Load %}
+								{{ class_C.YTD_Return_Load }}<sup>%</sup>
+							{% else %}
+								N/A
+							{% endif %}
+						</h3>						
+					</div>
+				</div>
+				<div class="hero-data-table-item d-none">
+					<h6 class="text-eyebrow text-uppercase text-blue2">{{ __("Annualized Distribution Rate (NAV)", "lucera-bootstrap") }})</h6>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+							{{ class_C.Distribution_Factor }}<sup>%</sup>
+						</h3>
+						<div class="tooltip ms-3">
+							<i class="icon-info"></i>
+							<span tooltiptext class="tooltiptext">{{ __("Distribution rates are not guaranteed. They are calculated by annualizing the most recent distribution per share and diving by the NAV as of the reported date.<br /><br /> Distributions may be comprised of ordinary income, net capital gains, and/or a return of capital (ROC) of your investment in the fund. Because the distribution rate may include a ROC, it should not be confused with yield or income. ", "lucera-bootstrap") }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> #}
+
+		{% if fields.footnote  %}
+			<div class="footnote description text-paragraph--small mt-2">
+				{{ fields.footnote }}
+			</div>
+		{% endif %}
+	</div>
+</section>

@@ -1,0 +1,136 @@
+{% set brochureHeading = post.meta('footer_brochure_heading') ? post.meta('footer_brochure_heading') :
+lucera_theme.footer_brochure_heading %}
+{% set brochureDescription = post.meta('footer_brochure_description') ? post.meta('footer_brochure_description') :
+lucera_theme.footer_brochure_description %}
+{% set brochureButtonText = post.meta('footer_brochure_button_text') ? post.meta('footer_brochure_button_text') :
+lucera_theme.footer_brochure_button_text %}
+{% set brochureButtonLink = post.meta('footer_brochure_button_link') ? post.meta('footer_brochure_button_link') :
+lucera_theme.footer_brochure_button_link %}
+{% set brochureLinkDownloadable = post.meta('footer_brochure_button_link') ?
+post.meta('footer_brochure_is_downloadable') : lucera_theme.footer_brochure_is_downloadable %}
+{% set brochureBackgroundImage = post.meta('footer_brochure_background_image') ?
+post.meta('footer_brochure_background_image') : lucera_theme.footer_brochure_background_image %}
+
+<section class="brochure bg-blue text-white{{ post.meta('show_pre-footer_block') == 'no' ? ' d-none' : '' }}"
+style="background-image: url({{ brochureBackgroundImage.url }});">
+<div class="container container-padding">
+	<div class="section-heading">
+		<h2>{{ brochureHeading }}</h2>
+	</div>
+		{{ brochureDescription }}
+	{% if brochureButtonLink %}
+	<a href="{{ brochureButtonLink }}" class="brochure__btn btn btn-secondary" {{ brochureLinkDownloadable
+		? 'download' : '' }}>{{ brochureButtonText }}<span class="btn-label label-after">
+
+			{{ brochureLinkDownloadable ? '<i class="icon-download"></i>' : '<i class="icon-angle-right"></i>' }}
+		</span>
+	</a>
+	{% endif %}
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="site-footer-top bg-black text-white border-bottom border-white py-5">
+	<div class="container container-padding">
+		<div class="row">
+			<div class="col-lg-4 mb-4 mb-lg-0">
+				<a class="navbar-brand" href="{{ site.url }}">
+					{{ logo_light }}
+				</a>
+			</div>
+
+			<div class="col-lg-8">
+				<div class="site-footer-menu d-lg-flex justify-content-lg-between text-nav-main">
+					<ul>
+						{% for item in footer1_menu.items %}
+						<li class="{{ item.classes|join(' ') }}">
+							<a href="{{ item.link }}">{{ item.title }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+					<ul>
+						{% for item in footer2_menu.items %}
+						<li class="{{ item.classes|join(' ') }}">
+							<a href="{{ item.link }}">{{ item.title }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+					<ul>
+						{% for item in footer3_menu.items %}
+						<li class="{{ item.classes|join(' ') }}">
+							<a href="{{ item.link }}">{{ item.title }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+					<ul>
+						{% for item in footer4_menu.items %}
+						<li class="{{ item.classes|join(' ') }}">
+							<a href="{{ item.link }}">{{ item.title }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="d-lg-flex text-nav-sub justify-content-end mt-5 social">
+			<a href="{{ lucera_theme.social_linkedin }}" target="_blank" class="">
+				<i class="icon-linkedin"></i>Follow us on Linkedin</a>
+		</div>
+	</div>
+</div>
+<div class="site-footer-bottom bg-black text-white pb-5">
+		<div id="disclosures" class="border-bottom border-white pt-5 text-paragraph">
+		<div class="container container-padding mb-5">
+			{% if lucera_theme.footer_investor_warning %}
+				{{ lucera_theme.footer_investor_warning }}
+			{% endif %}
+		</div>
+		</div>
+		
+		<div class="border-bottom border-white py-5 text-paragraph--small">
+		<div class="container container-padding">
+			{% if lucera_theme.footer_text_content %}
+				{{ lucera_theme.footer_text_content }}
+			{% endif %}
+		</div>
+		</div>
+
+		<div id="risk-factors" class="border-bottom border-white text-paragraph--small">
+		<div class="container container-padding">
+			{% if lucera_theme.footer_accordion_content_title %}
+			<div class="accordion-container d-none d-md-block py-5">
+				{{ lucera_theme.footer_accordion_content_title }}
+				{{ lucera_theme.footer_accordion_content }}
+			</div>
+			{% endif %}
+		</div>
+		{% if lucera_theme.footer_accordion_content_title %}
+		
+		<div class="container container-padding d-md-none text-paragraph--small">
+			<div class="accordion-container">
+				<button class="accordion">{{ lucera_theme.footer_accordion_content_title }}</button>
+				<div class="panel">
+				{{ lucera_theme.footer_accordion_content }}
+				</div>
+			</div>
+		</div>
+		</div>
+		{% endif %}
+		<div class="container container-padding mt-5 text-paragraph--small">
+			{% if lucera_theme.footer_legal_text %}
+				{{ lucera_theme.footer_legal_text }}
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+{% if lucera_theme.copyright_text %}
+<div class="site-footer-copyright text-white text-paragraph--small py-3">
+	<div class="container container-padding">
+		<p>{{ lucera_theme.copyright_text }}</p>
+	</div>
+</div>
+{% endif %}
+
+</footer>

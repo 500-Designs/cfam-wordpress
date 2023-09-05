@@ -1,0 +1,9 @@
+.b--text-grid {
+    padding: 32px 0;
+    @media (--lg) {
+        padding: 50px 0px;
+    }
+    .img--full-width {
+        margin-bottom: 48px;
+    }
+}

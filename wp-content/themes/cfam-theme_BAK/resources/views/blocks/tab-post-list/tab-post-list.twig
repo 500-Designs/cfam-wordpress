@@ -1,0 +1,136 @@
+<section class="bg-white tab-post-list {{ block.className }}">
+	<div class="container container-padding">
+		<div class="tabs">
+
+			<div class="literature-dropdown btn-dropdown d-md-none">
+				<button class="btn btn-secondary btn-dropdown-toggle" type="button" id="btn-dropdownMenuButton1" data-bs-toggle="btn-dropdown" aria-expanded="false">Literature
+					<span class='btn-label label-after'>
+						<i class='icon-angle-down'></i>
+					</span>
+				</button>
+				<ul id="literature-tabs-nav-list" class="btn-dropdown-menu" aria-labelledby="btn-dropdownMenuButton1">
+					{% if fields.tabs %}
+						{% for item in fields.tabs %}
+
+							{% set tabId = 'tab-' ~ item.post_type %}
+							{% set tabLink = item.tab_type == 'link' ? item.link : '#' ~ tabId %}
+
+							<li>
+								<a tabs-nav-item-link class="btn-dropdown-item" href="{{ tabLink }}" data-tab-type={{ item.tab_type }} {{ item.tab_type != 'link' ? 'data-post-type=' ~ item.post_type }}>{{ item.tab_name }}</a>
+							</li>
+
+						{% endfor %}
+					{% endif %}
+				</ul>
+			</div>
+			<div class="d-none d-md-block">
+				<ul id="tabs-nav">
+					{% if fields.tabs %}
+						{% for item in fields.tabs %}
+
+							{% set tabId = 'tab-' ~ item.post_type %}
+							{% set tabLink = item.tab_type == 'link' ? item.link : '#' ~ tabId %}
+
+							<li tabs-nav-item>
+								<a tabs-nav-item-link href="{{ tabLink }}" data-tab-type={{ item.tab_type }} {{ item.tab_type != 'link' ? 'data-post-type=' ~ item.post_type }}>{{ item.tab_name }}</a>
+							</li>
+
+						{% endfor %}
+					{% endif %}
+				</ul>
+			</div>
+			<div id="tabs-content">
+				{% for item in fields.tabs %}
+					<div id="tab-{{ item.post_type }}" class="tab-content">
+						<div
+							class="container">
+
+							{# Show sort and search fields if current post type is "literature" or "form" #}
+							{% if item.post_type in ['literature', 'form'] %}
+								{# {% if item.sec_filings_link %}
+									<div class="row mb-5">
+										<div class="col">
+											<a href="{{ item.sec_filings_link }}" target="_blank">{{ __('View complete complete list of SEC filings', 'lucera-bootstrap') }}
+												<span class="ps-3 btn-label label-after">
+													<i class="icon-new-tab"></i>
+												</span>
+											</a>
+										</div>
+									</div>
+								{% endif %} #}
+
+								<div class="tab-content-search tab-content-filters">
+									<div class="col-sort">
+										<div class="custom-btn-dropdown custom-dropdown d-flex align-items-center">
+											<p class="font-bold">Sort By</p>
+											<select tab-content-sort class="tab-content__sort form-select form-select-lg ms-3" aria-label="">
+												<option value="1" selected>{{ __('Most Recent', 'lucera-bootstrap') }}</option>
+												<option value="2">{{ __('Oldest to Newest', 'lucera-bootstrap') }}</option>
+												<option value="3">{{ __('Name (A-Z)', 'lucera-bootstrap') }}</option>
+											</select>
+										</div>
+									</div>    
+									<div id="LiteratureFilter" class="col-filter" style="display:none">
+										<div class="custom-btn-dropdown custom-dropdown d-flex align-items-center">
+											<p class="font-bold">Filter by</p>
+											<select tab-content-filter class="tab-content__filter form-select form-select-lg ms-3" aria-label="">
+												<option value="" selected>All types</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-search">
+										<div class="search mt-md-0">
+											<i class="icon-search"></i>
+											<input tab-content-search type="text" class="tab-content__search form-control" placeholder="Search">
+										</div>
+									</div>
+								</div>
+
+								{# <ul tab-content-list class="tab-content-list" data-current-page="1" data-order="desc" data-order-by="date"></ul> #}
+								<div tab-content-list class="row tab-content-list" data-current-page="1" data-order="desc" data-order-by="date"></div>
+								<button tab-content-load-more class="btn btn-outline-primary btn-load-more tab-content__load-more" style="display: none;">{{ __('Load More', 'lucera-bootstrap') }}<span class="btn-label label-after">
+										<i class="icon-angle-down"></i>
+									</span>
+								</button>
+								<button tab-content-load-previous class="btn btn-outline-primary btn-load-more tab-content__load-previous" style="display: none;">{{ __('Load Previous', 'lucera-bootstrap') }}<span class="btn-label label-after">
+										<i class="icon-angle-down"></i>
+									</span>
+								</button>
+							{% endif %}
+
+							{# Show link if current post type is "sec-filing" #}
+							{% if item.post_type == 'sec_filing' %}
+
+								{% if item.sec_filings_link %}
+									<a href="{{ item.sec_filings_link }}" target="_blank" class="">{{ __('View complete complete list of SEC filings', 'lucera-bootstrap') }}
+										<span class="ps-3 btn-label label-after">
+											<i class="icon-new-tab"></i>
+										</span>
+									</a>
+								{% endif %}
+
+
+								<div class="custom-table">
+									<table>
+										<thead>
+											<tr>
+												<th>{{ __('Filing Type', 'lucera-bootstrap') }}</th>
+												<th>{{ __('Filing Date', 'lucera-bootstrap') }}</th>
+												<th>{{ __('Link', 'lucera-bootstrap') }}</th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+								</div>
+							{% endif %}
+
+						</div>
+					</div>
+				{% endfor %}
+
+			</div>
+			<!-- END tabs-content -->
+		</div>
+		<!-- END tabs -->
+	</div>
+</section>

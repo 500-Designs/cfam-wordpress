@@ -1,0 +1,71 @@
+{
+  "name": "lucera",
+  "version": "1.0.0",
+  "description": "Bootstrap theme for Wordpress using Timber and ACF",
+  "author": "Lucera",
+  "license": "ISC",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "dependencies": {
+    "chart.js": "^3.7.1",
+    "detect-browser": "^5.3.0",
+    "es6-promise": "^4.2.8",
+    "object-fit-images": "^3.2.4",
+    "reset-css": "^5.0.1",
+    "vanilla-lazyload": "^17.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.11.0",
+    "autoprefixer": "^9.5.1",
+    "babel-loader": "^8.1.0",
+    "bundle-loader": "^0.5.6",
+    "css-loader": "^2.1.1",
+    "cssnano": "^4.1.10",
+    "file-loader": "^3.0.1",
+    "image-webpack-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "postcss": "^7.0.16",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-hexrgba": "^2.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-mixins": "^6.2.1",
+    "postcss-object-fit-images": "^1.1.2",
+    "precss": "^4.0.0",
+    "prettier": "^2.5.1",
+    "prettier-plugin-twig-melody": "^0.4.6",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1% in US",
+    "> 2%",
+    "IE 11"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7",
+              "ie >=11"
+            ]
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+    "key": "group_62c6d050b2128",
+    "title": "Global: Custom SEO Fields",
+    "fields": [
+        {
+            "key": "field_62c6d06e892ca",
+            "label": "H1",
+            "name": "h1",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_status",
+                "operator": "==",
+                "value": "publish"
+            }
+        ],
+        [
+            {
+                "param": "post_status",
+                "operator": "==",
+                "value": "private"
+            }
+        ],
+        [
+            {
+                "param": "post_status",
+                "operator": "==",
+                "value": "draft"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1657198446
+}

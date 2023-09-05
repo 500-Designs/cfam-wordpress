@@ -1,0 +1,34 @@
+{% extends '_layout.twig' %}
+
+{% block content %}
+		<article class="{{ post.post_type }}-single post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+				<div class="b--hero hero-single-post">
+					<div class="container container-padding">
+						<span class="badge post-category-badge">{{ post.terms('category') | join(', ') }}</span>
+
+
+
+						<h2 class="h1 post-title">{{ post.title }}</h2>
+						<ul class="post-meta">
+							<li class="meta-author"><span>By</span><a href="{{post.author.link}}"> {{post.author.nickname}} </a></li>
+							<li class="meta-date-published"><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time></li>
+						</ul>
+						{% if post.thumbnail.src('full') %}
+						<img src="{{ post.thumbnail.src('full') }}" class="post-feature-image" alt="Feature image for {{ post.title }}" />
+						{% endif %}
+
+						
+					</div>
+				</div>
+				<div class="article-body">
+					<div class="container container-padding">
+
+						
+						{{post.content}}
+
+						<a class="post-link" href="{{ site.url }}/news"><i class="icon-angle-right"></i> Back to News</a>
+					</div>
+				</div>
+
+		</article>
+{% endblock %}

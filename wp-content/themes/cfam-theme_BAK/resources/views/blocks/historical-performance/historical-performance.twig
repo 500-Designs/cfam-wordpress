@@ -1,0 +1,53 @@
+<section class="custom-block lazy-container {{ block.name | replace({ 'acf/': '' }) }}">
+	<div class="container container-padding">
+
+		<h4>Monthly Total Returns by Share Class</h4>
+		<div class="table-responsive">
+			<table class="performance-table">
+				<thead>
+					<tr class="heading">
+						<th style="min-width: 110px;" class="table-current-fund-class">CLASS A</th>
+						<th>Jan</th>
+						<th>Feb</th>
+						<th>Mar</th>
+						<th class="q-heading">Q1</th>
+						<th>Apr</th>
+						<th>May</th>
+						<th>Jun</th>
+						<th class="q-heading">Q2</th>
+						<th>Jul</th>
+						<th>Aug</th>
+						<th>Sep</th>
+						<th class="q-heading">Q3</th>
+						<th>Oct</th>
+						<th>Nov</th>
+						<th>Dec</th>
+						<th class="q-heading">Q4</th>
+						<th>YTD</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+		</div>
+
+		<p class="lh-base fst-italic fw-bold mb-5">{{ fields.note }}</p>
+
+		<h4 class="nav-bar-graph-title">NAV and Distribution History</h4>
+		<div class="legend nav-bar-graph-legend">
+			<div>
+				<img src="/wp-content/themes/lucera-bootstrap/dist/images/icon-bar-chart.svg" />
+				<span>NAV Per Share</span>
+			</div>
+			<div>
+				<img src="/wp-content/themes/lucera-bootstrap/dist/images/icon-line-chart.svg" />
+				<span>Gross Annualized Distribution Rate Per Share</span>
+			</div>
+		</div>
+		<div class="line-chart-container">
+
+			<canvas id="nav-history-bar-chart" height="400"></canvas>
+		</div>
+	</div>
+</section>

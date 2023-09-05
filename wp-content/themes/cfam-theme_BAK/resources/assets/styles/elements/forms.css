@@ -1,0 +1,15 @@
+select{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 170%;
+    padding: 12px 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-radius: 3px;
+    appearance: none;
+    background-image: url('/wp-content/themes/lucera-bootstrap/dist/images/icon-angle-down.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    color: $darkgray2;
+}

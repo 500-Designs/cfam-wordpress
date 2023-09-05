@@ -1,0 +1,24 @@
+<section class="b--text-grid {{ block.className }}">
+	<div class="container container-padding">
+	{% if fields.heading %}
+		<h3>{{ fields.heading }}</h3>
+	{% endif %}
+		<div class="row">
+			{% set column = 12/fields.columns %}
+
+			{% for content in fields.content_list %}
+
+				<div class="col-md-{{ column }} mt-5">
+					{{ content.content }}
+				</div>
+
+
+			{% endfor %}
+		</div>
+	{% if fields.description %}
+		<div class="footnote description text-paragraph--small">
+			{{ fields.description }}
+		</div>
+	{% endif %}
+	</div>
+</section>

@@ -1,0 +1,45 @@
+/* Feel free to customize all these values */
+
+
+/* Font weight */
+$bold: 'Arial Black';
+
+/* Colors */
+$black: #000;
+$white: #fff;
+$blue: #003366;
+$blue2: #004B8D;
+$gray: #FAFAFA;
+$gray2: #CCCCCC;
+$gray3: #E5E5E5;
+$darkgray: #666666;
+$darkgray2: #333333;
+$darkgray3: #0B2443;
+$navy: #004B8D;
+$teal: #00B0A8;
+
+/* Screen sizes */
+$screen-xs: 480px;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-2xl: 1400px;
+$screen-3xl: 1600px;
+$screen-maxwidth: 1920px;
+
+/* Breakpoints */
+@custom-media --to-xs (width <= $screen-xs);
+@custom-media --xs (width >= $screen-xs);
+@custom-media --to-sm (width <= $screen-sm);
+@custom-media --sm (width >= $screen-sm);
+@custom-media --to-md (width <= $screen-md);
+@custom-media --md (width >= $screen-md);
+@custom-media --to-lg (width <= $screen-lg);
+@custom-media --lg (width >= $screen-lg);
+@custom-media --to-xl (width <=$screen-xl);
+@custom-media --xl (width >=$screen-xl);
+@custom-media --xl2 (width >= $screen-2xl);
+@custom-media --xl3 (width >= $screen-3xl);
+@custom-media --maxwidth (width >= $screen-maxwidth);
+

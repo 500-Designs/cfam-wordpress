@@ -1,0 +1,12 @@
+.transition-200 {
+    @mixin transition-200;
+}
+
+.transition-300 {
+    @mixin transition-300;
+}
+
+.transition-500 {
+    @mixin transition-500;
+}
+

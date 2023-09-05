@@ -1,0 +1,39 @@
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.absolute-vertical {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.absolute-horizonal {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.absolute-full {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}

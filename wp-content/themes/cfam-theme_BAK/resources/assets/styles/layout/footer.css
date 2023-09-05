@@ -1,0 +1,90 @@
+.brochure {
+    padding: 64px 0px;
+    background-position: 70% center;
+    @media (--md) {
+        display: flex;
+        align-items: center;
+        padding-top: 124.5px;
+        padding-bottom: 123.5px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100% center;
+    }
+
+    h2{
+        margin-bottom: 0px;
+    }
+
+    .section-heading{
+        margin-bottom: 16px;
+    }
+    
+
+    .btn{
+        margin-top: 30px;
+    }
+    @media (max-width: 768px) {
+        p br {
+            display: none;
+        }
+    }
+    /* @media (--md) {
+        .boxed-description {
+            max-width: 590px;
+        }
+    } */
+}
+
+.site-footer {
+    &-menu {
+        font-weight: 500;
+        ul {
+            +ul {
+                margin-top: 24px;
+                @media (--lg) {
+                    margin-top: 0px;
+                }
+            }
+            li+li {
+                margin-top: 24px;
+                @media (--lg) {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+    &-top{
+        .social a i{
+            font-size: 16px;
+            margin-right: 12px;
+        }
+    }
+
+    #risk-factors{ 
+        margin-top: -50px; 
+        .container{ padding-top: 50px; }
+    }
+
+    #disclosures{ 
+        margin-top: -50px; 
+        .container{ padding-top: 50px; }
+    }
+
+
+    &-bottom {
+        h5 {
+            margin-bottom: 10px;
+        }
+        p:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+    .border-bottom.border-white {
+        border-color: rgba(255, 255, 255, 0.2)!important;
+        position: relative;
+    }
+}
+
+.site-footer-copyright{
+    background-color: rgba(0, 0, 0, 0.9);
+}

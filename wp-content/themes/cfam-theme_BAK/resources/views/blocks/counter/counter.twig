@@ -1,0 +1,30 @@
+<section class="counter-section custom-block lazy-container {{ block.className }}">
+	<div class="container container-padding">
+		<h2 class="heading">{{ fields.heading }}</h2>
+		<div class="d-lg-flex justify-content-lg-between">
+			{% for counter in fields.counter %}
+				<div class="col-counter">
+					<p class="text-eyebrow text-uppercase text-blue2">{{ counter.title }}</p>
+					<div class="d-flex align-items-center mt-2">
+						<h3 class="text-statistics">
+	            {% if counter.value_prefix %}
+								<sup>{{ counter.value_prefix }}</sup>
+							{% endif %}
+							{{ counter.value }}
+							{% if counter.value_suffix %}
+								<sup>{{ counter.value_suffix }}</sup>
+							{% endif %}
+	          </h3>
+	          {% if counter.add_tooltip %}
+	          <div class="tooltip ms-3"><i class="icon-info"></i>
+              <span tooltiptext class="tooltiptext">{{ counter.tooltip }}</span>
+          	</div>
+          	{% endif %}
+						
+					</div>
+				</div>
+
+			{% endfor %}
+		</div>
+	</div>
+</section>

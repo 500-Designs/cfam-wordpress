@@ -1,0 +1,48 @@
+<section class="multi-progress-chart-list bg-white fluid-right {{ block.className }}">
+	<div class="container container-padding">
+		<div class="row">
+			<div class="col-lg-6 pe-lg-0">
+				<div class="text-content">
+					<h2>{{ fields.heading }}</h2>
+					<p>{{ fields.description }}</p>
+
+					{% for item in fields.progress_items %}
+
+					<div class="d-md-flex align-items-md-center mt-5">
+						<div class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="5s">
+							<div class="chart-pie" data-percent="{{ item.percentage }}">
+								<div class="text-statistics">
+									<span>{{ item.percentage }}<sup>%</sup>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-8 mt-4 mt-lg-0">
+							<h4>{{ item.title }}</h4>
+							<p>{{ item.description }}</p>
+						</div>
+					</div>
+
+					{% endfor %}
+
+				</div>
+			</div>
+			<div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0 ps-lg-5 pt-lg-5 pe-0 d-none d-md-flex justify-content-end">
+				{{ image }}
+			</div>
+		</div>
+	</div>
+	{% if fields.disclosure_text %}
+		<div class="container container-padding  mb-4">
+			<div class="footnote description text-paragraph--small">
+				{{ fields.disclosure_text }}
+			</div>
+		</div>
+	{% endif %}
+
+	<div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0 ps-lg-5 pt-lg-5 pe-0 d-flex justify-content-end d-md-none">
+	<div class="mobile-image">
+		{{ image }}
+	</div>
+	</div>
+</section>

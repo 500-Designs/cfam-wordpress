@@ -1,0 +1,37 @@
+    <section class="page-content" role="main">
+        <div class="container">
+           
+            <h2 class="h1">{{ title }}</h2>
+            
+            {#Filter#}
+            <nav class="filter-tag__nav">
+                <ul data-toggle="buttons"
+                    {#Data taxonomy#}
+                    data-taxonomy="type"
+                >
+                      {% if types %}
+                        {#Hide non-classes type#}
+                        {% for type in types if type.id != 1 %}
+                            <li class="filterTrigger filter-tag">
+                                <label
+                                    class="filter-tag__btn-filter btn btn-lg ">
+                                    <input name="filter_term"
+                                           value="{{ type.slug }}"
+                                           class="hidden"
+                                           type="checkbox">
+                                    {{ type.name }}
+                                    <i class="filter-tag__icon icon-custom-cancel"></i>
+                                </label>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </nav>
+
+        </div>
+
+        {% filter shortcodes %}
+            [ajax_load_more post_type="investment" taxonomy="type" taxonomy_terms=":" taxonomy_relation="OR" taxonomy_operator="IN:IN" button_label="Load More" posts_per_page="5" button_loading_label=". . ." ]
+        {% endfilter %}
+
+    </section><!--/.page-page-->

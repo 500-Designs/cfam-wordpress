@@ -1,0 +1,42 @@
+.contact-info-list{
+    margin-top: 70px;
+    margin-bottom: 100px;
+    @media (--to-xs) {
+    	margin-top: 64px;
+    	margin-bottom: 64px;
+  	}
+
+	.wrapper{
+		background-color: $gray;
+		padding: 50px;
+		@media (--to-xs) {
+    	padding: 24px;
+  	}
+
+		.heading{
+			margin-bottom: 10px;
+			font-family: 'Helvetica Neue';
+			font-style: normal;
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 140%;
+			letter-spacing: -0.005em;
+			color: $darkgray3;
+			@media (--to-xs) {
+	    	font-size: 20px;
+	    	line-height: 28px;
+	  	}
+		}
+
+		.description{
+			color: $darkgray2;
+			margin-bottom: 10px;
+		}
+
+		.contact-list{
+			li{ margin-bottom: 5px; }
+			i{ font-size: 18px; }
+		}
+
+	}
+}

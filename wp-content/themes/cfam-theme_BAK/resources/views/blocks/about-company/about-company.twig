@@ -1,0 +1,31 @@
+<section class="about-company custom-block lazy-container  {{ block.className }}">
+	<div class="container container-padding">
+		<div class="mb-5 mb-md-0">
+			<h3 class="text-uppercase text-blue mb-3 mb-md-5 gray-line-accent">{{ fields.title }}</h3>
+			
+		</div>
+		<div class="mb-5">
+			{{ fields.main_content }}
+		</div>
+		<div class="row pt-5">
+			<div class="col-lg-3 s-advisor-logo pt-lg-3" data-test="test">
+				{{ get_image_html(fields.company_logo.ID, 'full', 'img-fluid lazy') }}
+			</div>
+			<div class="col-lg-9 mt-4 mt-lg-0">
+				<h2>{{ fields.heading }}</h2>
+				{{ fields.description }}
+
+				{% if fields.show_button %}
+					<div class="mt-3">
+						<a href="{{ fields.button_link }}" class="brochure__btn btn btn-primary" download="">{{ fields.button_text }}<span class="btn-label label-after">
+								<i class="icon-download"></i>
+							</span>
+						</a>
+					</div>
+				{% endif %}
+
+				<InnerBlocks/>
+			</div>
+		</div>
+	</div>
+</section>

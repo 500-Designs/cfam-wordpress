@@ -1,0 +1,403 @@
+{% extends '_layout.twig' %}
+
+{% block content %}
+
+<section class="custom-block lazy-container text-white" data-module="hero">
+	<div class="b--hero"{% if fields.background_image %}style="background-image: url('{{ fields.background_image }}');"{% endif %}>>
+		<div class="container container-padding">
+			<div class="row">
+				<div class="col-lg-6 text-container d-flex align-items-center">
+					<div class="container">
+						<div class="breadcrumbs text-uppercase text-eyebrow">
+							<span><span><a href="/">Home</a> / <span class="breadcrumb_last" aria-current="page">Portfolio</span></span></span>
+						</div>
+
+						<h2 class="h1">Portfolio</h2>
+						<div class="text-white">
+							<p>Providing investors access to a  portfolio of sustainable infrastructure investments.</p>
+
+						</div>
+					</div>
+				</div>
+							</div>
+		</div>
+	</div>
+</section>
+
+<section class="composition custom-block lazy-container">
+	<div class="container container-padding">
+        <div class="title-block">
+            <h2>Composition</h2>
+            <p>The Fund intends to strategically invest in a portfolio of Private<br/>Investment Funds as well as public infrastructure securities.</p>
+        </div>
+
+        <div class="title-block">
+            <h3>Portfolio Composition (as of TBD)</h3>
+            <p>Seeking diversification across security type, geography and infrastructure type.</p>
+         </div>
+
+        <div class="composition-list">
+            <div class="composition-single">
+                <div class="composition-inner">
+                    <h5 class="text-center">Security Type</h5>
+                    <div class="chart-responsive">
+                        <div class="doughnut-chart">
+                            <canvas id="security-chart">
+                        </div>
+                    </div>
+                    <ul class="composition-legend text-paragraph--small">
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Private Infrastructure Equity</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Private Infrastructure Equity</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Traded Infrastructure Equity</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Publically Traded Securities</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Cash and Short Term Investments</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="composition-single">
+                <div class="composition-inner">
+                    <h5 class="text-center">Geography<sup>2</sup></h5>
+                    <div class="chart-responsive">
+                        <div class="doughnut-chart">
+                            <canvas id="geography-chart"/>
+                        </div>
+                    </div>
+                    <ul class="composition-legend text-paragraph--small">
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Country 1</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Country 2</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Country 3</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Country 4</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Country 5</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Country 6</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Other</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="composition-single">
+                <div class="composition-inner">
+                    <h5 class="text-center">Infrastructure Type<sup>2</sup></h5>
+                    <div class="chart-responsive">
+                        <div class="doughnut-chart">
+                            <canvas id="infrastructure-chart"/>
+                        </div>
+                    </div>
+                    <ul class="composition-legend text-paragraph--small">
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Type 1</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Type 2</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Type 3</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Type 4</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Type 5</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Type 6</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                        <li>
+                            <span class="color"></span>
+                            <span class="label">Type 7</span>
+                            <span class="percentage">X%</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+         </div>
+
+        <div class="composition-holdings">
+            <div class="title-block">
+                <h3>Portfolio Holdings and Diversification (as of TBD)</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 portfolio-table-wrap">
+                    <h5>Top Public Holdings</h5>
+                    <div class="portfolio-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Investment</th>
+                                    <th>% of Portfolio</th>
+                                <tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Investment 1</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Investment 2</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Investment 3</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Investment 4</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Investment 5</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Investment 6</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Investment 7</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Investment 8</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Investment 9</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Investment 10</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-md-6 portfolio-table-wrap">
+                    <h5>Top Private Holdings</h5>
+                    <div class="portfolio-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Investment</th>
+                                    <th>% of Portfolio</th>
+                                <tr>
+                            </thead>
+                             <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Investment 1</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Investment 2</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Investment 3</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Investment 4</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Investment 5</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Investment 6</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Investment 7</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Investment 8</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Investment 9</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Investment 10</td>
+                                    <td>x.xx%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="diversification counter-section custom-block lazy-container bg-gray3 mb-0">
+	<div class="container container-padding">
+        <div class="title-block">
+            <h2>Private Fund Diversification</h2>
+            <p>The Fund offers broad, multi-tiered diversification across infrastructure through investments<br />
+		in private funds and currently offers exposure to:</p>
+        </div>
+		<div class="d-lg-flex justify-content-lg-between mb-5">
+            <div class="col-counter">
+            <p class="text-eyebrow text-uppercase text-blue2">Investments</p>
+                <div class="d-flex align-items-center mt-2">
+                    <h3 class="text-statistics">
+                        XX.XX
+                    </h3>
+                </div>
+            </div>
+
+            <div class="col-counter">
+            <p class="text-eyebrow text-uppercase text-blue2">Distribution Rate</p>
+                <div class="d-flex align-items-center mt-2">
+                    <h3 class="text-statistics">
+                        XX
+                        <sup>%</sup>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="col-counter">
+            <p class="text-eyebrow text-uppercase text-blue2">Cumultative Return</p>
+                <div class="d-flex align-items-center mt-2">
+                    <h3 class="text-statistics">
+                        XX
+                        <sup>%</sup>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="col-counter">
+                <p class="text-eyebrow text-uppercase text-blue2">Annualized Distribution Rate (NAV)</p>
+                <div class="d-flex align-items-center mt-2">
+                <h3 class="text-statistics">
+                    X.XX
+                    <sup>%</sup>
+                    </h3>
+                    <div class="tooltip ms-3"><i class="icon-info"></i>
+                        <span tooltiptext class="tooltiptext">Distribution rates are not performance. They are calculated by annualizing the most recent distribution per share and diving by the NAV as of the reported date. 
+                    Distributions may be comprised of ordinary income, net capital gains, and/or a return of capital (ROC) of your investment in the fund. Because the distribution rate may include a ROC, it should not be confused with yield or income. </span>
+                    </div>
+                        
+                </div>
+            </div>
+
+        </div>
+        <div class="text-paragraph--small">
+            <p>Holdings are subject to change and do not constitute a recommendation or solicitation to buy or sell a particular security.</p>
+        </div>
+	</div>
+</section>
+<section class="page-break--image">
+                <img src="https://via.placeholder.com/1440x434" alt="Name" class="img-fluid w-100">
+</section>
+<section class="gallery">
+    <div class="container container-padding">
+        <div class="title-block">
+            <h2>Investment Gallery</h2>
+        </div>
+    <div class="row">
+        <div class="gallery-item col-md-6">
+            <a class="bg-black modal-toggle teamModal-toggle d-block" data-member-id="626">
+                <img src="https://via.placeholder.com/530x340" alt="Name" class="img-fluid w-100">
+                <div class="gallery-item-details">
+                    <ul class="post-tag">
+                        <li><a href="#">Network</a></li>
+                    </ul>
+                    <div class="gallery-item-details-title">    
+                        <h5 class="member-name">Infrastructure Investment Title</h5>
+                    </div>
+                    <div class="gallery-item-details-location">
+                        <p>California, US</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+</section>
+{% endblock %}

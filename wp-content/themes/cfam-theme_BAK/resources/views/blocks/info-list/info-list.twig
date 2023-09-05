@@ -1,0 +1,19 @@
+<section class="info-list bg-white {{ block.className }}">
+	<div class="container container-padding">
+		<h2>{{ fields.heading }}</h2>
+		<ul class="structure-table mt-4">
+
+			{% for item in fields.info %}
+
+			<li>
+				<span class="structure-table-label">{{ item.label }}</span>
+				<span class="structure-table-data"><span>{{ item.value }}</span></span>
+			</li>
+
+			{% endfor %}
+		</ul>
+		<div class="text-paragraph--small mt-5">
+			{{ fields.note }}
+		</div>
+	</div>
+</section>

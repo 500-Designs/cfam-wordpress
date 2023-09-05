@@ -1,0 +1,25 @@
+<div class="gallery-item col-md-6" data-category="{{ post.terms('type') | join(', ') }}">
+    <a class="modal-toggle galleryModal-toggle d-block">
+            {% set galleryImage = post.thumbnail %}
+            {% if galleryImage %}
+                {{ get_image_html(memberImage.ID, 'full', 'img-fluid w-100 lazy') }}
+                <img
+                src="{{ post.thumbnail.src }}" srcset="{{ post.thumbnail.src|retina(1) }} 1x,
+                {{ post.thumbnail.src|retina(2) }} 2x,
+                {{ post.thumbnail.src|retina(3) }} 3x,
+                {{ post.thumbnail.src|retina(4) }} 4x"
+                alt="Name" class="gallery-item--image img-fluid w-100">
+            {% else %}
+                <img src="https://via.placeholder.com/543x340" alt="Name" class="gallery-item--image img-fluid w-100">
+            {% endif %}
+        <div class="gallery-item-details">
+            <div class="post-tag text-eyebrow text-uppercase">{{ post.terms('type') | join(', ') }}</div>
+            <div class="gallery-item-details-title">    
+                <h5 class="gallery-item-details--name">{{ post.title }}</h5>
+            </div>
+            <div class="gallery-item-details-location">
+                <p class="font-bold">{{ post.meta('location') }}</p>
+            </div>
+        </div>
+    </a>
+</div>

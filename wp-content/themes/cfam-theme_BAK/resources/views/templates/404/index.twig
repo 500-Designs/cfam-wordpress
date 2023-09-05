@@ -1,0 +1,21 @@
+{% extends '_layout.twig' %}
+
+{% block content %}
+
+    {# Content goes here #}
+    <section class="container container-404 text-center rich-text">
+        <h1 class="alpha">404</h1>
+
+        <p>{{ __("We can't seem to find that page.") }}</p>
+
+        <p>
+            <a
+                class="link-alpha"
+                href="{{ site.url }}"
+            >
+                {{ __("Back to the homepage") }}
+            </a>
+        </p>
+    </section>
+
+{% endblock %}

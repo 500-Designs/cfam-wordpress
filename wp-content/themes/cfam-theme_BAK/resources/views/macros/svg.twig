@@ -1,0 +1,17 @@
+{# Here's some example icon code. You will need to pass in (1) the correct viewbox value, and (2) the correct path values. #}
+{% macro search(classes='', label='', decorative) %}
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 15" xml:space="preserve" class="{{ classes }}">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 14 15"
+    fill="currentcolor"
+    aria-hidden={decorative ? true : undefined}
+    aria-label={!decorative && label ? label : undefined}
+    role={decorative ? 'presentation' : 'img'}
+    focusable="false"
+>
+    <path d="M14,13l-3.72-3.72c1.01-0.99,1.64-2.31,1.64-3.78c0-3.03-2.67-5.5-5.96-5.5S0,2.47,0,5.5
+    C0,8.53,2.67,11,5.96,11c1.14,0,2.2-0.3,3.11-0.82l3.88,3.88L14,13z M1.5,5.5c0-2.21,2-4,4.46-4s4.46,1.79,4.46,4s-2,4-4.46,4
+    S1.5,7.71,1.5,5.5z" />
+</svg>
+{% endmacro %}

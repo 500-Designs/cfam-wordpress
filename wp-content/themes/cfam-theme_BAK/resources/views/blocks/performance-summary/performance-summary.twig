@@ -1,0 +1,79 @@
+<section
+	class="performance-summary-section custom-block lazy-container at-nav">
+	<div class="container container-padding">
+		<h3 class="heading mb-0">{{ fields.heading }}</h3>
+		<span class="performance-summary-as-of"></span>
+		
+
+			<div class="row">
+				<div class="col">
+					<h3 class="text-eyebrow text-uppercase text-blue2">{{ __('NAV', 'lucera-bootstrap') }} 
+					<span class="daily-as-of"><span></h3>
+					<p class="text-statistics">
+						<sup>$</sup><span class="ps-nav">0<span>
+					</p>
+					{% if fields.summary_items.nav.has_tooltip %}
+						<div class="tooltip ms-3">
+							<i class="icon-info"></i>
+							<span tooltiptext class="tooltiptext">{{ fields.summary_items.nav.tooltip }}</span>
+						</div>
+					{% endif %}
+				</div>
+				<div class="col">
+					<h3 class="text-eyebrow text-uppercase text-blue2">{{ __('ANNUALIZED RETURN SINCE INCEPTION',
+					'lucera-bootstrap') }}</h3>
+					<div class="d-flex align-items-center mt-2">
+						<div class="computed-value ps-arsi">0</div>
+						<div class="computed-value arsi-na">N/A</div>
+						{% if fields.summary_items.distribution_rate.has_tooltip %}
+							<div class="tooltip ms-3">
+								<i class="icon-info"></i>
+								<span tooltiptext class="tooltiptext">{{ fields.summary_items.distribution_rate.tooltip
+							}}</span>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col">
+					<h3 class="text-eyebrow text-uppercase text-blue2">{{ __('INCEPTION-TO-DATE RETURN', 'lucera-bootstrap') }}
+					</h3>
+					<div class="d-flex align-items-center mt-2">
+						<p class="text-statistics">
+							<span class="ps-itd">0</span><sup>%</sup>
+						</p>
+						{% if fields.summary_items.cumultative_return.has_tooltip %}
+							<div class="tooltip ms-3">
+								<i class="icon-info"></i>
+								<span tooltiptext class="tooltiptext">{{ fields.summary_items.cumultative_return.tooltip
+							}}</span>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+				<div class="col">
+					<h3 class="text-eyebrow text-uppercase text-blue2">{{ __('ANNUALIZED DISTRIBUTION RATE',
+					'lucera-bootstrap') }}</h3>
+					<div class="d-flex align-items-center mt-2">
+						<p class="text-statistics">
+							{% if fields.summary_items.annualized_distribution_rate_nav.default_adr %}
+								<span class="ps-ady">{{ fields.summary_items.annualized_distribution_rate_nav.default_adr }}</span><sup>%</sup>
+							{% else %}
+								<span class="ps-ady">0</span><sup>%</sup>
+							{% endif %}
+						</p>
+						{% if fields.summary_items.annualized_distribution_rate_nav.has_tooltip %}
+							<div class="tooltip ms-3">
+								<i class="icon-info"></i>
+								<span tooltiptext class="tooltiptext">{{
+							fields.summary_items.annualized_distribution_rate_nav.tooltip }}</span>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+
+	</div>
+</section>

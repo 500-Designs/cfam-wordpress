@@ -1,0 +1,54 @@
+<section class="bg-white b--info-with-image {{ block.className }}">
+
+	{% if fields.reverse_columns %}
+	{% else %}
+		<div class="d-lg-none img--full-width">
+		{{ image }}
+		</div>
+	{% endif %}
+	<div class="container container-padding">
+		<div class="row">
+			{% if fields.reverse_columns %}
+				<div class="col-lg-6 d-flex align-items-end  pt-5 pt-lg-0">
+					<div class="container pe-lg-5">
+						<h2>{{ fields.heading }}</h2>
+						{{ fields.description }}
+						{% if fields.button_link %}
+						<a href="{{ fields.button_link }}" type="button" class="btn btn-labeled btn-primary mt-4">
+							{{ fields.button_text }}
+							<span class="btn-label label-after">
+								<i class="icon-angle-right"></i>
+							</span>
+						</a>
+						{% endif %}
+					</div>
+				</div>
+
+				<div class="col-lg-6 d-lg-inline pt-5 pb-4 py-lg-0">
+					{{ image }}
+				</div>
+			{% else %}
+
+			<div class="col-lg-5 d-none d-lg-inline">
+				{{ image }}
+			</div>
+
+			<div class="col-lg-7 d-flex align-items-end">
+				<div class="container ps-lg-5">
+					<h2>{{ fields.heading }}</h2>
+					{{ fields.description }}
+					{% if fields.button_link %}
+					<a href="{{ fields.button_link }}" type="button" class="btn btn-labeled btn-primary mt-4">
+						{{ fields.button_text }}
+						<span class="btn-label label-after">
+							<i class="icon-angle-right"></i>
+						</span>
+					</a>
+					{% endif %}
+				</div>
+			</div>
+
+			{% endif %}
+		</div>
+	</div>
+</section>

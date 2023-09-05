@@ -1,0 +1,10 @@
+.b--info-with-bg-image {
+    padding: 64px 0px 37px;
+    padding-bottom: 170px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    @media (--lg) {
+        padding: 100px 0px 88px;
+    }
+}

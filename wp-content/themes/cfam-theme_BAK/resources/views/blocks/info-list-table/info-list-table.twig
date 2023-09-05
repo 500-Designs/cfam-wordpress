@@ -1,0 +1,89 @@
+<section class="info-list bg-white {{ block.className }}">
+	<div class="container container-padding">
+		<h2>{{ fields.heading }}</h2>
+
+	<div class="row mt-5">	
+			{% for fields in fields.info_table %}
+			<div class="col-lg-6 structure-table-wrap">
+				<ul class="structure-table">
+						{% for fields in fields.table %}
+
+						<li>
+							<span class="structure-table-label">{{ fields.label }}</span>
+							<span class="structure-table-data">{{ fields.value }}</span>
+						</li>
+
+						{% endfor %}
+
+				</ul>
+			</div>
+			{% endfor %}
+		</div>
+
+		<div class="py-5 d-none">
+		<ul class="structure-table-test">
+						
+						<li>
+							<span class="structure-table-label">Structure</span>
+							<span class="structure-table-data">1940 Act continuously offered closed-end interval fund</span>
+						</li>
+
+						
+						<li>
+							<span class="structure-table-label">Share Class</span>
+							<span class="structure-table-data">Class A: CUSIP: 13861L104  (NASDAQ ticker symbol: CAFIX)</span>
+						</li>
+
+						
+						<li>
+							<span class="structure-table-label">Pricing</span>
+							<span class="structure-table-data">Daily NAV</span>
+						</li>
+
+						
+						<li>
+							<span class="structure-table-label">Minimum Investment</span>
+							<span class="structure-table-data">Non Qualified Accounts: $2,500 / Qualified Accounts: $1,000</span>
+						</li>
+
+						
+						<li>
+							<span class="structure-table-label">Investment Liquidity</span>
+							<span class="structure-table-data">Quarterly at NAV*</span>
+						</li>
+
+						
+						<li>
+							<span class="structure-table-label">Distributions</span>
+							<span class="structure-table-data">Intend to pay quarterly distributions</span>
+						</li>
+
+						
+						<li>
+							<span class="structure-table-label">Fund Adviser</span>
+							<span class="structure-table-data">Cantor Fitzgerald Investment Advisors, L.P.</span>
+						</li>
+
+						
+						<li>
+							<span class="structure-table-label">Sub-Adviser</span>
+							<span class="structure-table-data">Capital Innovations, LLC</span>
+						</li>
+
+						
+						<li>
+							<span class="structure-table-label">Distributor</span>
+							<span class="structure-table-data">Ultimus Fund Distributors, LLC</span>
+						</li>
+
+						
+				</ul>
+				</div>
+
+
+		
+		<div class="footnote description text-paragraph--small">
+				{{ fields.note }}
+		</div>
+	</div>
+</section>

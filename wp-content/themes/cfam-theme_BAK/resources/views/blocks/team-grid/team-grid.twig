@@ -1,0 +1,41 @@
+<section class="team-grid custom-block lazy-container bg-white {{ block.className }}">
+	<div class="container container-padding">
+		<div class="row">
+			{% for member in Post(fields.team_members) %}
+				<div class="team-member col-sm-6 col-lg-4 {% if member.meta('position') %} --big-tiles-position{% endif %}{% if fields.show_company %} --big-tiles-company{% endif %}">
+					<a class="bg-black modal-toggle teamModal-toggle d-block" data-member-id="{{ member.id }}" data-team-item-toggle>
+						{% set memberImage = member.meta('image') %}
+						{% if memberImage %}
+							{{ get_image_html(memberImage.ID, 'full', 'img-fluid w-100 lazy') }}
+						{% else %}
+							<img src="https://via.placeholder.com/350" alt="Member Name" class="img-fluid w-100">
+						{% endif %}
+						<div class="team-member-details text-white">
+							<div class="team-member-details-title">
+							<h5 class="member-name" data-team-item-name>{{ member.post_title }}</h5>
+							{% if member.meta('position') %}
+								<p class="member-position" data-team-item-positon>{{ member.meta('position') }}</p>
+							{% endif %}
+							</div>
+			
+							<div class="team-member-details-company{% if fields.show_company %}{% else %} d-none{% endif %}">
+								{% if member.meta('company') %}
+									<p data-team-item-company>{{ member.meta('company') }}</p>
+								{% endif %}
+							</div>
+							
+							<div class="team-member-details-about d-none" data-team-item-about>
+								<div class="teamModal-bio mt-3">
+									{% if member.meta('about') %}
+										{{ member.meta('about') }}
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+

@@ -1,0 +1,11 @@
+.b--info-with-image{
+    padding-bottom: 32px;
+    @media (--lg) {
+        margin-top: 50px;
+        padding: 50px 0px;
+    }
+
+    .img--full-width{
+        margin-bottom: 48px;
+    }
+}

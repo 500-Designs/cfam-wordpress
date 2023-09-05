@@ -1,0 +1,76 @@
+<section class="custom-block lazy-container {{ block.name | replace({ 'acf/': '' }) }}">
+	<div class="container container-padding">
+		{% if fields.heading %}
+	    <h2 class="heading">{{ fields.heading }}</h2>
+		{% endif %}
+	</div>
+
+	{% if fields.add_bar_chart %}
+		<div class="container container-padding bar-chart">
+			{% if fields.bar_chart.heading %}
+	    		<h3>{{ fields.bar_chart.heading }}</h3>
+			{% endif %}
+
+			{% if fields.bar_chart.subheading %}
+				<h4 class="fw-normal performance-since-inception-date">{{ fields.bar_chart.subheading }}</h4>
+			{% endif %}
+
+			<div class="chart-responsive">
+				<div class="performance-metrics-bar-chart">
+					<canvas id="chart-{{ block.id }}" height="256"></canvas>
+				</div>
+			</div>
+
+			{% if fields.bar_chart.description %}
+			<div class="description text-paragraph--small">
+		      <p>{{ fields.bar_chart.description }}</p>
+		    </div>
+		    {% endif %}
+		</div>
+	{% endif %}
+
+	{% if fields.add_table %}
+		<div class="container container-padding table-container">
+			{% if fields.table.heading %}
+	    		<h4>{{ fields.table.heading }}</h4>
+			{% endif %}
+
+			<div class="table-responsive">
+		      <table class="performance-table">
+		        <thead>
+		          <tr class="heading">
+		            <th class="table-as-of-date">As of Date</th>
+		            <th class="text-center">1 Month</th>
+		            <th class="text-center">3 Month</th>
+		            <th class="text-center">6 Month</th>
+		            <th class="text-center">1 Year</th>
+		            <th class="text-center">ITD</th>
+		          </tr>
+		        </thead>
+		        <tbody>
+					{# Content here is rendered by performance.js #}
+		        </tbody>
+		      </table>
+		    </div>
+
+		   	{# {% if fields.table.footnote %}
+			<div class="description text-paragraph--small">
+		   		<p>{{ fields.table.footnote }}</p>
+			</div>
+		   	{% endif %}
+
+			{% if fields.table.description %}
+			<div class="footnote description text-paragraph--small">
+		      <p>{{ fields.table.description }}</p>
+
+		      {% if fields.table.add_link %}
+		      	<p><a herf="{{ fields.table.link.url }}">{{ fields.table.link.title }} <i class="icon-angle-down"></i></a></p>
+		      {% endif %}
+		    </div>
+		    {% endif %} #}
+		</div>
+	{% endif %}
+
+
+	
+</section>

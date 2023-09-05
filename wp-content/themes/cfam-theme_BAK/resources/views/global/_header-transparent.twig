@@ -1,0 +1,146 @@
+<header class="site-header">
+	<nav class="topbar">
+		<div class="container container-padding d-flex justify-content-end align-items-center">
+
+			<ul class="topbar-menu text-nav-sub d-none d-lg-flex text-uppercase">
+				{% for item in top_header_menu.items %}
+				<li class="{{ item.classes|join(' ') }}">
+					{% if item.children %}
+					<div class="dropdown">
+						<a class="dropdown-trigger">{{ item.title }}</a>
+						<div class="dropdown-content text-black">
+							<ul class="dropdown-content-menu">
+								{% for child in item.children %}
+								<li>
+									<a class="modal-toggle outsideLinkModal-toggle text-nav-main"
+										data-title="{{ child.title }}" data-link="{{ child.link }}">
+										{{ child.title }}
+										<span class="btn-label label-after"><i class="icon-new-tab"></i></span>
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					{% else %}
+					<a href="{{ item.link }}">{{ item.title }}</a>
+					{% endif %}
+				</li>
+				{% endfor %}
+			</ul>
+
+			<ul class="social">
+				<li>
+					<a href="{{ lucera_theme.social_linkedin }}" alt="linkedin">
+						<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M6.94043 5.00002C6.94017 5.53046 6.7292 6.03906 6.35394 6.41394C5.97868 6.78883 5.46986 6.99929 4.93943 6.99902C4.409 6.99876 3.90039 6.78779 3.52551 6.41253C3.15062 6.03727 2.94016 5.52846 2.94043 4.99802C2.9407 4.46759 3.15166 3.95899 3.52692 3.5841C3.90218 3.20922 4.411 2.99876 4.94143 2.99902C5.47186 2.99929 5.98047 3.21026 6.35535 3.58552C6.73024 3.96078 6.9407 4.46959 6.94043 5.00002ZM7.00043 8.48002H3.00043V21H7.00043V8.48002ZM13.3204 8.48002H9.34043V21H13.2804V14.43C13.2804 10.77 18.0504 10.43 18.0504 14.43V21H22.0004V13.07C22.0004 6.90002 14.9404 7.13002 13.2804 10.16L13.3204 8.48002Z"
+								fill="#003366" />
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<nav class="mainnav bg-transparent">
+		<div class="container container-padding d-flex justify-content-between align-items-center">
+			<div class="navbar-brand">
+				<a href="{{ site.url }}">
+					{{ header_logo }}
+				</a>
+			</div>
+			<a class="toggle-menu d-lg-none">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			<div class="mainnav-menu d-lg-block">
+				<div class="container">
+					<ul class="nav-main">
+						{% for item in main_menu.items %}
+						<li class="nav-main-item {{ item.classes|join(' ') }}">
+							<a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+							{% if item.children %}
+							<ul class="nav-drop">
+								{% for child in item.children %}
+								<li class="nav-drop-item">
+									<a href="{{ child.link }}">{{ child.title }}</a>
+								</li>
+								{% endfor %}
+							</ul>
+							{% endif %}
+						</li>
+						{% endfor %}
+					</ul>
+
+					<div class="d-lg-none">
+						<ul class="topbar-mobile-menu text-uppercase">
+							{% for item in top_header_menu.items %}
+							<li class="{{ item.classes|join(' ') }}">
+								{% if item.children %}
+								<div class="dropdown">
+									<a class="dropdown-trigger">{{ item.title }}</a>
+									<div class="dropdown-content text-black">
+										<ul class="dropdown-content-menu">
+											{% for child in item.children %}
+											<li>
+												<a class="modal-toggle outsideLinkModal-toggle"
+													data-title="{{ child.title }}" data-link="{{ child.link }}">
+													{{ child.title }}
+													<span class="btn-label label-after"><i
+															class="icon-new-tab"></i></span>
+												</a>
+											</li>
+											{% endfor %}
+										</ul>
+									</div>
+								</div>
+								{% else %}
+								<a href="{{ item.link }}">{{ item.title }}</a>
+								{% endif %}
+							</li>
+							{% endfor %}
+						</ul>
+						<ul class="social">
+							<li>
+								<a href="" alt="linkedin">
+									<svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M6.94043 5.00002C6.94017 5.53046 6.7292 6.03906 6.35394 6.41394C5.97868 6.78883 5.46986 6.99929 4.93943 6.99902C4.409 6.99876 3.90039 6.78779 3.52551 6.41253C3.15062 6.03727 2.94016 5.52846 2.94043 4.99802C2.9407 4.46759 3.15166 3.95899 3.52692 3.5841C3.90218 3.20922 4.411 2.99876 4.94143 2.99902C5.47186 2.99929 5.98047 3.21026 6.35535 3.58552C6.73024 3.96078 6.9407 4.46959 6.94043 5.00002ZM7.00043 8.48002H3.00043V21H7.00043V8.48002ZM13.3204 8.48002H9.34043V21H13.2804V14.43C13.2804 10.77 18.0504 10.43 18.0504 14.43V21H22.0004V13.07C22.0004 6.90002 14.9404 7.13002 13.2804 10.16L13.3204 8.48002Z"
+											fill="#003366" />
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+</header>
+
+<div class="modal-default outsideLinkModal">
+	<div class="modal-overlay outsideLinkModal-toggle"></div>
+	<div class="modal-wrapper">
+		<div class="modal-header">
+			<button class="modal-close outsideLinkModal-toggle"><i class="icon-close"></i></button>
+			<h3 class="modal-heading text-center">You are now leaving the Cantor Fitzgerald Sustainable Infrastructure
+				website</h2>
+		</div>
+
+		<div class="modal-body">
+			<div class="modal-content pt-4 text-center">
+				<p>You are now leaving the Cantor Fitzgerald Sustainable Infrastructure website, and are being connected
+					to a third party web site. Please note that Cantor Fitzgerald is not responsible for the information
+					or content found on third party web sites.</p>
+				<div class="d-flex justify-content-center mt-4">
+					<a href="#" class="btn btn-primary outsideLinkModal-link" target="_blank">I Agree</a>
+					<a href="#" class="btn outsideLinkModal-toggle">Go Back</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

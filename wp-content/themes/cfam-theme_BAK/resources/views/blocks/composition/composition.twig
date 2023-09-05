@@ -1,0 +1,146 @@
+<section class="composition custom-block lazy-container {{ block.className }}">
+	<div class="container container-padding">
+		<div class="title-block">
+			<h2>{{ fields.heading }}</h2>
+			<div class="boxed-description">
+				{{ fields.description }}
+			</div>
+		</div>
+
+		<div class="title-block">
+			<h3>{{ fields.subsection_heading }}</h3>
+			<h4>{{ fields.subsection_subheading }}</h4>
+			{{ fields.subsection_description }}
+		</div>
+
+		<div class="composition-list">
+			<div class="composition-single">
+				<div class="composition-inner">
+					<h5 class="text-center">Asset Type</h5>
+					<div class="chart-responsive">
+						<div class="doughnut-chart">
+							<div class="sample-donut-chart d-flex justify-content-center">
+								<canvas id="asset-chart"></canvas>
+							</div>
+						</div>
+					</div>
+					{% if fields.pie_charts.asset_type %}
+						<ul data-repeater="asset_type" class="composition-legend text-paragraph--small asset-type-labels">
+							{% for row in fields.pie_charts.asset_type %}
+								<li>
+									<span class="color"></span>
+									<span class="label">{{ row.label }}</span>
+									<span class="percentage">{{ row.value}}%</span>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</div>
+			</div>
+			<div class="composition-single">
+				<div class="composition-inner">
+					<h5 class="text-center">Geography<sup>2</sup>
+					</h5>
+					<div class="chart-responsive">
+						<div class="doughnut-chart">
+							<div class="sample-donut-chart d-flex justify-content-center">
+								<canvas id="geography-chart"></canvas>
+							</div>
+						</div>
+					</div>
+					{% if fields.pie_charts.geography %}
+						<ul data-repeater="geography" class="composition-legend text-paragraph--small xyz geopgraphy-labels">
+							{% for row in fields.pie_charts.geography %}
+								<li>
+									<span class="color"></span>
+									<span class="label">{{ row.label }}</span>
+									<span class="percentage">{{ row.value}}%</span>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+
+				</div>
+			</div>
+			<div class="composition-single">
+				<div class="composition-inner">
+					<h5 class="text-center">Infrastructure Type<sup>2</sup>
+					</h5>
+					<div class="chart-responsive">
+						<div class="doughnut-chart">
+							<div class="sample-donut-chart d-flex justify-content-center">
+								<canvas id="infrastructure-chart"></canvas>
+							</div>
+						</div>
+					</div>
+					{% if fields.pie_charts.infrastructure_type %}
+						<ul data-repeater="infrastructure_type" class="composition-legend text-paragraph--small infrastructure-chart-labels">
+							{% for row in fields.pie_charts.infrastructure_type %}
+								<li>
+									<span class="color"></span>
+									<span class="label">{{ row.label }}</span>
+									<span class="percentage">{{ row.value}}%</span>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+
+		<div class="mb-5">
+			<div class="footnote description text-paragraph--small">
+				<p>{{ fields.footnote_portfolio_composition }}</p>
+			</div>
+		</div>
+		<div class="composition-holdings">
+			<div class="title-block">
+				<h3>Portfolio Holdings and Diversification</h3>
+				<h4>{{ fields.subsection_subheading }}</h4>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12 portfolio-table-wrap">
+					<h5>{{ fields.top_holdings_table.table_title }}</h5>
+					<div class="portfolio-table">
+						<table>
+							<thead>
+								<tr>
+									<th></th>
+									<th>Investment</th>
+									<th>Infrastructure Type</th>
+									<th>Asset Type</th>
+									<th>% of Total Invested Assets<sup>3</sup>
+									</th>
+								</tr>
+							</thead>
+							{% if fields.top_holdings_table.table_body_rows %}
+								<tbody data-repeater="holdings-table">
+									{% for row in fields.top_holdings_table.table_body_rows %}
+										<tr>
+											<td>{{ loop.index }}</td>
+											<td>{{ row.investment }}</td>
+											<td>{{ row.infrastructure_type }}</td>
+											<td>{{ row.asset_type }}</td>
+											<td>{{ row.percentage }}%</td>
+										</tr>
+									{% endfor %}
+								</tbody>
+							{% endif %}
+
+						</table>
+
+
+					</div>
+				</div>
+			</div>
+
+			<div class="pt-4">
+				<div class="footnote description text-paragraph--small">
+					<p>{{ fields.footnote_portfolio_holdings_diversification }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

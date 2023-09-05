@@ -1,0 +1,37 @@
+.b--cta {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    @media (--lg) {
+        padding-top: 131px;
+        padding-bottom: 131px;
+    }
+    &.cta-big {
+        padding-top: 64px;
+        padding-bottom: 170px;
+        @media (--lg) {
+            padding-top: 100px;
+            padding-bottom: 310px;
+        }
+    }
+    &.cta-half {
+        @media (--lg) {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    }
+    &.bg-color {
+        @media (--to-md) {
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
+        .text-container {
+            padding: 32px;
+            @media (--lg) {
+                padding: 52px;
+            }
+        }
+    }
+}

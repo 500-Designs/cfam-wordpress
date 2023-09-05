@@ -1,0 +1,94 @@
+/* Text colors */
+
+.text-white,
+.text-white a,
+.text-white p {
+    color: $white;
+}
+
+.text-black,
+.text-black a,
+.text-black p {
+    color: $black;
+}
+
+.text-gray,
+.text-gray a,
+.text-gray a {
+    color: $gray;
+}
+
+.text-darkgray,
+.text-darkgray a,
+.text-darkgray p {
+    color: $darkgray!important;
+}
+
+.text-darkgray2,
+.text-darkgray2 a,
+.text-darkgray2 p {
+    color: $darkgray2;
+}
+
+.text-navy,
+.text-navy a,
+.text-navy p {
+    color: $navy;
+}
+
+.text-teal,
+.text-teal a,
+.text-teal p {
+    color: $teal;
+}
+
+.text-blue,
+.text-blue a,
+.text-blue p {
+    color: $blue;
+}
+
+.text-blue2,
+.text-blue2 a,
+.text-blu2 p {
+    color: $blue2!important;
+}
+
+p {
+    color: $darkgray2;
+}
+
+
+/* Background colors */
+
+.bg-white {
+    background-color: $white;
+}
+
+.bg-black {
+    background-color: $black;
+}
+
+.bg-gray {
+    background-color: $gray;
+}
+
+.bg-gray2 {
+    background-color: $gray2;
+}
+
+.bg-gray3 {
+    background-color: $gray3;
+}
+
+.bg-navy {
+    background-color: $navy;
+}
+
+.bg-teal {
+    background-color: $teal;
+}
+
+.bg-blue {
+    background-color: $blue;
+}

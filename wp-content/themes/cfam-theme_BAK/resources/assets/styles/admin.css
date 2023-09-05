@@ -1,0 +1,10 @@
+/* Gutenberg Styles */
+
+@import './global/settings';
+@import './global/mixins';
+@import './global/rich-text';
+
+.editor-styles-wrapper {
+    .wp-block {
+    }
+}

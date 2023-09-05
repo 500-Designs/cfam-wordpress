@@ -1,0 +1,65 @@
+<section id="gallery-block" class="gallery  {{ block.className }}">
+    <div class="container container-padding">
+            <div class="title-block">
+            {% if fields.heading %}
+                <h2 class="heading">{{ fields.heading }}</h2>
+            {% endif %}
+              {# <h2 class="heading">{{ __('Infrastructure Gallery', 'lucera-bootstrap') }}</h2> #}
+            </div>
+            <div class="custom-btn-dropdown custom-dropdown">
+                <p class="font-bold">
+                    {{ __('Infrastructure Type', 'lucera-bootstrap') }}
+                </p>
+                <select id="filter-by-category" class="form-select form-select-lg mt-1" aria-label="" data-filter-by-category>
+                    <option value="all" selected="">All</option>
+                    {% for type in types %}
+                        <option value="{{ type.id }}">{{ type.title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+        <div class="row" id="gallery-list" data-gallery-list>
+            
+            {% for post in investments %}
+            <div class="gallery-item col-md-6">
+                <a class="modal-toggle galleryModal-toggle d-block" data-gallery-item-toggle>
+                		{% set galleryImage = post.thumbnail %}
+						{% if galleryImage %}
+							{{ get_image_html(memberImage.ID, 'full', 'img-fluid w-100 lazy') }}
+                            <img src="{{ post.thumbnail.src }}" alt="Name" class="gallery-item--image img-fluid w-100">
+						{% else %}
+                            <img src="https://via.placeholder.com/543x340" alt="Name" class="gallery-item--image img-fluid w-100">
+						{% endif %}
+                    <div class="gallery-item-details">
+                        <div class="post-tag text-eyebrow text-uppercase" data-gallery-item-tag>{{ post.terms('investmenttype') | join(', ') }}</div>
+                        <div class="gallery-item-details-title">    
+                            <h5 class="gallery-item-details--name" data-gallery-item-name>{{ post.title }}</h5>
+                        </div>
+                        <div class="gallery-item-details-location">
+                            <p class="font-bold" data-gallery-item-location>{{ post.meta('location') }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="load-more-wrap d-flex justify-content-center">
+            <button class="btn btn-outline-primary btn-load-more" type="button" page_num="1"  event="load_more" data-gallery-load-more>{{ __('Load More Investments', 'lucera-bootstrap') }}
+                <span class="btn-label label-after">
+                    <i class="icon-angle-down"></i>
+                </span>
+            </button>
+        </div>
+        
+
+    </div>
+
+    {% if fields.footnote %}
+        <div class="container container-padding text-paragraph--small mt-4">
+            <div class="footnote description text-paragraph--small">
+                {{ fields.footnote }}
+            </div>
+        </div>
+    {% endif %}
+</section>

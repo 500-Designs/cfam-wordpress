@@ -1,0 +1,18 @@
+.counter-section{
+	margin-top: 20px;
+	margin-bottom: 60px;
+	.heading{ 
+		margin-bottom: 40px; 
+	}
+	sup{ 
+		font-size: 0.6em;
+		margin-left: 2px;
+	}
+	.col-counter{
+		@media (--to-lg) {
+			margin-bottom: 25px;
+        }
+	}
+	
+
+}

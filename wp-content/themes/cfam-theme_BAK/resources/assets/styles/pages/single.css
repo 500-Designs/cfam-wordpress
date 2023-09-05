@@ -1,0 +1,109 @@
+.post-single{
+	.hero-single-post{     
+		margin-bottom: 0px;
+		background: linear-gradient(to top, rgba(229,229,229,0) 0%,rgba(229,229,229,0) 21%,rgba(229,229,229,1) 21%,rgba(229,229,229,1) 100%);
+		@media (--to-xs) {
+			background: linear-gradient(to top, rgba(229,229,229,0) 0%,rgba(229,229,229,0) 10%,rgba(229,229,229,1) 10%,rgba(229,229,229,1) 100%);
+    }
+
+		.container{ 
+			width: 766px;
+	    max-height: none;
+	    padding-top: 50px;
+	    @media (--to-sm) {
+	    	width: 100%;
+	    }
+
+			.post-category-badge{
+				margin-bottom: 20px;
+			}
+
+			.post-title{
+				font-family: 'Helvetica Neue';
+				font-size: 40px;
+				line-height: 110%;
+				@media (--to-sm) {
+					font-size: 30px;
+	      }
+			}
+
+			.post-meta{
+				@media (--to-sm) {
+    			margin-bottom: 40px;
+        }
+	      li{
+		  		font-style: normal;
+		  		font-weight: 400;
+		  		font-size: 15px;
+		  		line-height: 170%;
+		  		color: $darkgray2;
+		  		display: inline-block;
+		  		margin-bottom: 40px;
+		  		@media (--to-sm) {
+	    			font-size: 14px;
+	    			line-height: 23.8px;
+	    			margin-bottom: 0;
+	        }
+          a{
+          	color: $darkgray2;
+          }
+	      }
+			}
+
+			.post-feature-image{
+    		width: 100%;
+	  	}
+
+	  	.core-block{
+	  		width: auto;     
+				max-height: auto;
+	  	}
+		}
+	}
+	.article-body{
+		padding-top: 40px;
+		width: 766px;
+		margin: 0 auto;
+		@media (--to-sm) {
+	    width: 100%;
+	  }
+
+		p{
+			margin-bottom: 60px;
+			@media (--to-md) {
+				margin-bottom: 40px;
+	    }
+		}
+		h4{
+			font-family: 'Helvetica Neue';
+	    font-size: 32px;
+	    font-weight: 700;
+	    line-height: 110%;
+	    @media (--to-md) {
+				font-size: 30px;
+	    }
+		}
+		.wp-block-image{
+			margin-bottom: 60px;
+			@media (--to-md) {
+				margin-bottom: 40px;
+	    }
+		}
+		.post-link{
+			line-height: 21.98px;
+			font-weight: 500;
+	    margin-bottom: 100px;
+	    display: block;
+	    @media (--to-md) {
+				margin-bottom: 130px;
+      }
+
+			i{
+				transform: rotate(185deg);
+			  display: inline-block;
+			  font-size: 18px;
+			}
+		}
+	}
+
+}

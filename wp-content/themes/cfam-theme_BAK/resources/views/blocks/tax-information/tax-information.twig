@@ -1,0 +1,45 @@
+<section class="custom-block lazy-container {{ block.name | replace({ 'acf/': '' }) }}">
+	<div class="container container-padding">
+		{% if fields.heading %}
+			<h2 class="heading">{{ fields.heading }}</h2>
+		{% endif %}
+
+		{% if fields.description %}
+			<p class="mb-4">{{ fields.description }}</p>
+		{% endif %}
+
+		<div class="table-responsive">
+			<table class="performance-table">
+				<thead>
+					<tr class="heading">
+						<th>1099</th>
+						<th>1A</th>
+						<th>1B</th>
+						<th>2A</th>
+						<th>2B</th>
+						<th>3</th>
+						<th>5</th>
+					</tr>
+					<tr class="subheading">
+						{% for label in fields.table_labels %}
+							<th>{{ label }}</th>
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+					{% for row in fields.table_content %}
+						<tr>
+							<td>{{ row.column_1 }}</td>
+							<td>{{ row.column_2 }}</td>
+							<td>{{ row.column_3 }}</td>
+							<td>{{ row.column_4 }}</td>
+							<td>{{ row.column_5 }}</td>
+							<td>{{ row.column_6 }}</td>
+							<td>{{ row.column_7 }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>

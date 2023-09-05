@@ -1,0 +1,83 @@
+/* Global styles */
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+
+    @media (--md) {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+}
+
+p {
+}
+
+a {
+    @mixin transition-200;
+    color: inherit;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+    }
+}
+
+strong {
+    font-weight: bold;
+}
+
+svg {
+    fill: currentColor;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    border: 0 solid;
+}
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+    display: block;
+    vertical-align: middle;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    padding: 0.2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Remove focus rings if user is not tabbing */
+body:not(.user-is-tabbing) {
+    button,
+    input,
+    select,
+    textarea,
+    a {
+        &:focus {
+            outline: none;
+        }
+    }
+}

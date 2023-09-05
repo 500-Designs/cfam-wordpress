@@ -1,0 +1,97 @@
+.rich-text {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol {
+        a {
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    ol,
+    ul {
+        li {
+            position: relative;
+
+            &:before {
+                display: inline;
+                position: relative;
+            }
+
+            ol,
+            ul {
+                margin-bottom: 1.5rem;
+                margin-left: 2rem;
+                margin-top: 0.75rem;
+                padding-left: 0;
+
+                li {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+
+    ol {
+        counter-reset: counter;
+
+        li {
+            &:before {
+                color: $black;
+                counter-increment: counter;
+                content: counter(counter) '. ';
+            }
+
+            ol {
+                counter-reset: counter-child;
+
+                li:before {
+                    counter-increment: counter-child;
+                    content: counter(counter-child, lower-alpha) '. ';
+                }
+            }
+        }
+    }
+
+    ul {
+        li {
+            &:before {
+                background-color: $black;
+                border-radius: 9999px;
+                content: '';
+                display: inline-block;
+                height: 3px;
+                margin: 0 0.625rem 0 0.125rem;
+                top: -3px;
+                width: 3px;
+
+                @media (--md) {
+                    height: 4px;
+                    top: -0.225rem;
+                    width: 4px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.multi-progress-chart-list {
+    padding-top: 34px;
+    padding-bottom: 64px;
+    media (--md) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .mobile-image {
+        padding-left: 2rem;
+        media (--lg) {
+            padding-left: 2.938rem;
+        }
+    }
+}

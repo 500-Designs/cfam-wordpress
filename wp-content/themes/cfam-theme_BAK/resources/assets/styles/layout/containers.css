@@ -1,0 +1,87 @@
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1140px;
+    }
+  }
+
+.container {
+@mixin container-base;
+}
+
+.container-padding {
+@mixin container-padding;
+}
+
+.container-maxwidth {
+@mixin container-base;
+max-width: $screen-maxwidth;
+}
+
+.container-default {
+@mixin container-base;
+@mixin container-padding;
+max-width: $screen-3xl;
+}
+
+
+.container-padding .container-padding{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+
+
+.fluid-right{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.fluid-right > .container{
+    max-width: 1440px;
+}
+
+@media (--to-xs) {
+    .fluid-right > .container {
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (--to-md) {
+    .fluid-right > .container {
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media (--md) {
+    .fluid-right > .container {
+        width: calc(((100% - 720px) / 2) + 720px) !important;
+        margin-right: 0;
+    }
+}
+
+@media (--lg) {
+    .fluid-right > .container {
+        width: calc(((100% - 960px) / 2) + 960px) !important;
+        margin-right: 0;
+    }
+}
+
+@media (--xl) {
+    .fluid-right > .container {
+        width: calc(((100% - 1140px) / 2) + 1140px) !important;
+        margin-right: 0;
+    }
+}
+
+
+/* @media (--2xl) {
+    .fluid-right > .container {
+        width: calc(((100% - 1140px) / 2) + 1140px) !important;
+        margin-right: 0;
+    }
+} */

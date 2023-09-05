@@ -1,0 +1,8 @@
+.info-with-image-2 {
+    padding-top: 61px;
+    padding-bottom: 64px;
+    @media (--lg) {
+        padding-top: 100px;
+        padding-bottom: 90px;
+    }
+}

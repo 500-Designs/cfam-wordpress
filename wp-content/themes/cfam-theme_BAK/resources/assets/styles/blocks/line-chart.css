@@ -1,0 +1,50 @@
+.line-charts-section {
+    margin-top: 50px;
+    @media (--to-md) {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .heading {
+        margin-bottom: 40px;
+        @media (--to-md) {
+            font-size: 40px;
+            margin-top: 30px;
+        }
+        @media (--to-sm) {
+            font-size: 40px;
+        }
+    }
+    .heading {
+        font-size: 40px;
+        margin-bottom: 8px;
+        .tooltiptext {
+            color: $darkgray2;
+            line-height: 170%;
+            font-weight: 400;
+            font-family: 'Helvetica Neue';
+            @media (--to-lg) {
+                left: -145px;
+            }
+            @media (--to-md) {
+                left: -25px;
+            }
+            @media (--to-sm) {
+                left: -35px;
+            }
+        }
+    }
+    .description {
+        margin-bottom: 40px;
+        p {
+            line-height: 170%;
+        }
+    }
+    .line-chart-responsive {
+        max-width: 538.89px;
+        width: 100%;
+        overflow-x: auto;
+    }
+    .hypothetical-growth-chart-container {
+        width: 100%;
+    }
+}

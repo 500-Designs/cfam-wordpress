@@ -1,0 +1,35 @@
+.accordion-container{
+
+    > .accordion {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 0px;
+        transition: 0.4s;
+        text-align: left;
+        font-size: inherit;
+        background-color: transparent;
+        color: $white;
+        display: flex;
+        align-items: center;
+
+        &:after {
+            font-family: icomoon!important;
+            content: "\e90a";
+            font-size: 9px!important;
+            margin-left: 13.64px;
+        }
+
+        &.active:after {
+            transform: rotateX(180deg);
+        }
+    }
+
+    > .panel {
+        padding-top: 10px;
+        display: none;
+        overflow: hidden;
+    }
+
+}

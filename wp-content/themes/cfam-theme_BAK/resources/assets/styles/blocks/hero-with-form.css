@@ -1,0 +1,130 @@
+.b--hero {
+    &.--with-form{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background-color: $gray3;
+        .text-container, .hero-form-wrap{
+            p{
+                color: $darkgray2;
+            }
+            @media (--lg) {
+                padding-top: 205px;
+                padding-bottom: 90px;
+            }
+        }
+
+        @media (--to-lg) {
+            .text-container{
+                padding-top: 166px;
+                padding-bottom: 39px;
+            }
+            .hero-form-wrap{
+                padding-top: 30px;
+                padding-bottom: 0px;
+            }
+        }
+
+        .hero-contact-details{
+            margin-top: 30px;
+
+            li + li{
+                margin-top: 10px;
+            }
+
+            li a{
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .hero-address{
+            margin-top: 60px;
+            margin-bottom: 64px;
+            @media (--lg) {
+                margin-top: 100px;
+                margin-bottom: 0px;
+            }
+
+            h5{
+                margin-bottom: 20px;
+            }
+
+            p{
+                i{
+                    color: $blue;
+                }
+            }
+        }
+
+        .hero-form-wrap{
+            .gform_wrapper{
+                margin: 0px;
+            }
+
+            .gform_wrapper ul.gform_fields li.gfield{
+                padding-right: 0px;
+
+                @media (--sm) {
+                    &.gf_left_half{
+                        padding-right: 7.5px;
+                    }
+                    &.gf_right_half{
+                        padding-left: 7.5px;
+                    }
+                }
+            }
+
+            .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .gform_wrapper select{
+                padding: 12px 10px;
+                height: 55px;
+                width: 100%;
+                color: $darkgray2;
+            }
+
+            .gform_wrapper select{
+                appearance: none;
+            }
+
+            .gform_wrapper textarea.medium{
+                padding: 12px 10px;
+                height: 133px;
+                width: 100%;
+            }
+
+            .gform_wrapper .top_label div.ginput_container, .gform_wrapper .top_label li.gfield.gf_left_half .ginput_container:not(.gfield_time_hour):not(.gfield_time_minute):not(.gfield_time_ampm):not(.ginput_container_date):not(.ginput_quantity):not(.datepicker):not(.gfield_signature_container), .gform_wrapper .top_label li.gfield.gf_right_half .ginput_container:not(.gfield_time_hour):not(.gfield_time_minute):not(.gfield_time_ampm):not(.ginput_container_date):not(.ginput_quantity):not(.datepicker):not(.gfield_signature_container){
+                margin-top: 0px;
+            }
+
+            .gform_wrapper ul li.gfield{
+                margin-top: 0px;
+                margin-bottom: 26px;
+            }
+
+            .gform_wrapper ul li.gfield:last-of-type{
+                margin-bottom: 0px;
+            }
+
+            .gform_wrapper .gform_footer{
+                padding: 0px;
+                margin: 15px 0px 0px;
+            }
+
+
+            .gform_footer .gform_button{
+                padding: 15px 48px 15px 25px;
+                border-radius: 0px;
+                background-image: url('/wp-content/themes/lucera-bootstrap/dist/images/angle-right.svg');
+                background-position: calc(100% - 20px) center ;
+                background-repeat: no-repeat;
+                background-color: $blue;
+                min-width: 183px;
+                color: $white;
+                cursor:  pointer;
+                @media (--to-lg) {
+                    width: auto;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}

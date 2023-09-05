@@ -1,0 +1,46 @@
+.team-grid {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @media (--lg) {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    +.s-team {
+        padding-top: 0px;
+        @media (--lg) {
+            padding-top: 100px;
+        }
+    }
+    .team-member {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        >.bg-black {
+            height: 100%;
+        }
+        &-details {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* @media (--lg) {
+                min-height: 185px;
+            } */
+            h5 {
+                margin-bottom: 4px;
+                @media (--lg) {
+                    margin-bottom: 5px;
+                }
+            }
+            p {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.team-member.--big-tiles-position.--big-tiles-company .team-member-details{
+    min-height: 138px;
+    @media (--lg) {
+        min-height: 185px;
+    }
+}

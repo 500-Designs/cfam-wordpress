@@ -1,0 +1,36 @@
+<style>
+	@media only screen and (min-width: 320px) {
+		#cta-{{ block.id }} {
+			background-image: url({{ fields.background_image_sm.url }});
+		}
+	}
+
+	@media only screen and (min-width: 768px) {
+		#cta-{{ block.id }} {
+			background-image: url({{ fields.background_image_md.url }});
+		}
+	}
+
+	@media only screen and (min-width: 1400px) {
+		#cta-{{ block.id }} {
+			background-image: url({{ fields.background_image_lg.url }});
+		}
+	}
+</style>
+
+{% set contentBgStyle = fields.content_bg_color ? 'style="background-color: ' ~ fields.content_bg_color ~ '"' : '' %}
+<section id="cta-{{ block.id }}" class="b--cta {% if fields.content_bg_color %}bg-color {% endif %}cta-big {{ block.className }}">
+	<div class="container container-padding text-container" {{ contentBgStyle }}>
+		<h2>{{ fields.heading }}</h2>
+		<div class="text-darkgray2">
+			{{ fields.description }}
+		</div>
+		{% if fields.button_link %}
+			<a href="{{ fields.button_link }}" type="button" class="btn btn-labeled btn-primary mt-4">{{
+			fields.button_text }}<span class="btn-label label-after">
+					<i class="icon-angle-right"></i>
+				</span>
+			</a>
+		{% endif %}
+	</div>
+</section>

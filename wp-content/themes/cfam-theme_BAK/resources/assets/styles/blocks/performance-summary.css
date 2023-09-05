@@ -1,0 +1,122 @@
+.performance-summary-section {
+    margin-top: 50px;
+    @media (--to-md) {
+        margin-top: 0;
+    }
+    .performance-summary-as-of {
+        font-weight: 400 !important;
+        font-size: 24px;
+        display: block;
+        margin-bottom: 40px;
+    }
+    .daily-as-of {
+        text-transform: none;
+        color: #4F4F4F;
+        font-weight: 300;
+        font-size: 12px;
+        display: block;
+    }
+
+    .heading {
+        font-size: 64px;
+        line-height: 1;
+        margin-top: -10px;
+        @media (--to-md) {
+            font-size: 40px;
+            margin-top: 30px;
+        }
+        @media (--to-sm) {
+            font-size: 40px;
+        }
+    }
+    .row {
+        margin-bottom: 50px;
+        display: flex;
+        padding: 0 20px;
+        @media (--to-md) {
+            margin-bottom: 30px;
+        }
+        @media (--to-md) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }    
+    .col {
+        margin-bottom: 60px;
+        display: flex;
+        width: auto;
+        padding-right: 10%;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: none;
+        padding: 0;
+        margin: 0;
+        &:nth-child(1) {
+            width: 200px;
+        }
+        &:nth-child(2) {
+            flex: 1;
+        }
+        h3 {
+            font-family: 'Helvetica Neue';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 0.05em;
+            color: #004B8D;
+            margin-bottom: 8px;
+        }
+        .text-statistics, .computed-value {
+            font-family: 'Helvetica Neue';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 110%;
+            letter-spacing: -0.02em;
+            color: #000000;
+            margin: 0;
+            @media (--to-lg) {
+                font-weight: 400;
+                font-size: 32px;
+            }
+            sup {
+                font-family: 'Helvetica Neue';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 110%;
+                letter-spacing: -0.02em;
+                color: #000000;
+            }
+        }
+        .tooltiptext {
+            @media (--to-md) {
+                left: 60px;
+            }
+        }
+        .value-load {
+            display: none;
+        }
+    }
+    &.at-nav {
+        .at-offer {
+            display: none;
+        }
+    }
+    &.at-offer {
+        .at-nav {
+            display: none;
+        }
+    }
+}
+
+
+.summary-performance-row {
+    @media (max-width: 1200px) {
+        flex-direction: column;
+        > .core-block  {
+            width: 100%;
+        }
+    } 
+}

@@ -1,0 +1,36 @@
+/* Vendor styles */
+
+@import 'reset-css';
+
+/* Uncomment these if you like. */
+
+@import '../bootstrap/css/bootstrap-grid.css';
+@import '../bootstrap/css/bootstrap-utilities.css';
+
+/* @import '../bootstrap/css/bootstrap.css'; */
+
+
+/* @import 'slick-carousel/slick/slick.css'; */
+
+
+/* Globals */
+
+@import './global/settings';
+@import './global/mixins';
+@import './global/rich-text';
+@import './global/general-styles';
+
+/* The rest */
+
+@import './blocks/*';
+@import './components/*';
+@import './elements/*';
+@import './layout/*';
+@import './navigation/*';
+@import './pages/*';
+@import './pages/*/*';
+@import './utilities/*';
+
+/* Browser overrides (mostly IE) */
+
+@import './browser-overrides';

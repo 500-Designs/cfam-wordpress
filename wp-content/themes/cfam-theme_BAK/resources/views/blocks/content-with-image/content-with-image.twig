@@ -1,0 +1,17 @@
+<section class="b--content-with-image {{ block.className }}">
+	<article class="b--content-with-image-item container container-padding">
+		<h3 class="text-uppercase text-blue gray-line-accent">{{ fields.title }}</h3>
+		<div class="row d-flex align-items-center">
+			<div class="col-lg-6">
+			<h2>{{ fields.heading }}</h2>	
+					<div class="text-content">
+						<InnerBlocks />
+					</div>
+			</div>
+			<div class="b--content-with-image-image col-lg-6">
+				{{ get_image_html(fields.image.ID, 'full', 'img-fluid w-100 lazy') }}
+			</div>
+		</div>
+	</article>
+</section>
+

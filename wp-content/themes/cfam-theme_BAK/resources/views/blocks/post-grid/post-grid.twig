@@ -1,0 +1,65 @@
+<section class="post-grid custom-block lazy-container {{ block.className }}">
+<div class="container container-padding">
+
+	<div class="row filter-section">
+		<div class="col-lg-8 col-md-6 col-filter">
+			{% if fields.show_filter_option %}
+			<label class="label">{{ __('Filter by year', 'lucera-bootstrap') }}</label>
+			<select class="form-select" data-post-select>
+					<option selected>All</option>
+					<option >2022</option>
+				</select>
+			{% endif %}
+		</div>
+		<div class="col-lg-4 col-md-6 col-search">
+			{% if fields.show_search_option %}
+			<div class="input-group">
+				<button class="btn" type="button"><i class="icon-search"></i></button>
+				<input type="text" class="form-control input-search" placeholder="Search" data-post-search>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+
+	
+	<div class="row posts-section">
+		{% if posts %}
+			{% set col_count = 0 %} 
+			{% for post in posts %}
+
+				{% set col_post_first = "" %}
+				{% if col_count == 0 %}
+					{% set col_post_first = "col-post-first" %} 
+				{% elseif col_count == 4 %}
+					{% set col_count = 0 %}
+					{% set col_post_first = "col-post-first" %} 
+				{% endif %}
+
+				{% if 'Featured' in post.terms('category') %} {% set col_count = col_count + 2 %} {% else %} {% set col_count = col_count + 1 %} {% endif %}
+
+				<div class="col-post {{ col_post_first }} {% if 'Featured' in post.terms('category') %} col-post-featured col-sm-6 col-lg-6 {% else %} col-sm-6 col-lg-3 {% endif %}">
+					{% if post.thumbnail.src('full') %}
+					<a href="{{ post.link }}">
+						<img src="{{ post.thumbnail.src('full') }}" class="post-thumbnail" alt="Thumbnail image for {{ post.title }}" />
+					</a>
+					{% endif %}
+					<span class="badge post-category-badge">{{ post.terms('category') | join(' | ') }}</span>
+					<h2 class="post-title"><a href="{{ post.link }}">{{ post.title }}</a></h2>
+					<ul class="post-meta">
+						<li class="meta-date-published">{{ post.date("F j, Y") }}</li>
+					</ul>
+
+					<p class="post-excerpt">{{ post.get_preview(50,'','') }}</p>
+					<a class="post-link" href="{{ post.link }}">{{ __('Read more', 'lucera-bootstrap') }} <i class="icon-angle-right"></i></a>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+
+	{% if posts | length > 10 %}
+		{% if fields.show_load_more_option %}
+			<button class="btn btn-post-load-more" data-post-load-more type="button" page_num="1" col_count="{{ col_count }}" event="load_more">{{ __('Load More News', 'lucera-bootstrap') }} <i class="icon-angle-down"></i></button>
+		{% endif %}
+	{% endif %}
+</div>
+</section>

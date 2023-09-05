@@ -1,0 +1,70 @@
+.btn{
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    @media (--lg) {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    color: $black;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 15px;
+    @media (--md) {
+        padding: 15px 25px;
+    }
+    border-radius: 0;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+    &-load-more i{
+        font-size: 10px;
+    }
+    
+    .btn-label{
+        display: inline-flex;
+        align-items: center;
+
+        &.label-after{
+            margin-left: 10px;
+        }
+
+        &.label-before{
+            margin-right: 10px;
+        }
+    }
+
+    &.btn-primary{
+        color: $white;
+        background-color: $blue;
+
+        &:hover{
+            background-color: $blue2;
+        }
+    }
+
+    &.btn-secondary{
+        color: $blue;
+        background-color: $white;
+
+        &:hover{
+            background-color: $gray3;
+        }
+    }
+
+    &.btn-link{
+        color: $blue;
+    }
+    
+
+    &-outline-primary{
+        color: $blue;
+        border-color: $blue;
+    }
+}

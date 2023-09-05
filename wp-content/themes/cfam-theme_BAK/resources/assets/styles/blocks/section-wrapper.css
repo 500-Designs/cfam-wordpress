@@ -1,0 +1,8 @@
+.section-wrapper{
+    > .container{
+        @media (--lg) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}

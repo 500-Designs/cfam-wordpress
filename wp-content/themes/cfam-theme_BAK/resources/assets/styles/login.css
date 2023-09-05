@@ -1,0 +1,125 @@
+/* Just some sample styles here for now */
+
+/* body {
+    background: #fff;
+    font-family: 'aktiv-grotesk', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#login h1 a,
+.login h1 a {
+    background-image: url(/wp-content/themes/lucera-bootstrap/static/logo-color.svg);
+    width: 250px;
+    background-repeat: no-repeat;
+    padding-bottom: 30px;
+    background-size: contain;
+    height: 60px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.login h1 {
+    padding-top: 50px;
+}
+
+#loginform {
+    border: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 115%;
+    padding: 80px 20px 40px;
+    color: #001D48;
+    box-shadow: none;
+    margin-top: 0;
+}
+
+#login {
+    width: 578px;
+}
+
+.login #login > p {
+    padding-left: 20px;
+    margin: .5rem 0;
+}
+}
+
+.login .button.wp-hide-pw .dashicons {
+    color: #6d6e71;
+}
+
+#login form p.submit {
+    display: block;
+    float: left;
+    clear: both;
+
+    background: #353535;
+    border-radius: 0;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 0 1.5rem 0 0;
+}
+
+#login form p.submit:after {
+    background-image: url('../../assets/icons/arrow-circle-white.svg');
+    content: '';
+    display: block;
+    height: 14px;
+    width: 14px;
+    transition: transform .2s ease-in-out;
+}
+
+#login form p.submit:hover:after {
+    transform: translateX(10px);
+}
+
+.wp-core-ui .button.button-large[type='submit'] {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: .75rem 2rem;
+    text-transform: uppercase;
+}
+
+#nav a {
+    color: #000;
+    font-weight: 700;
+}
+
+.login #backtoblog a,
+.login #nav a {
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .25px;
+}
+
+.login #backtoblog a:hover,
+.login #nav a:hover {
+    color: #e52a33;
+}
+
+.login label {
+    font-size: 17px;
+    line-height: 115%;
+}
+
+.login .user-pass-wrap {
+    margin-top: 25px;
+}
+
+.login form .input {
+    border-radius: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 3px;
+    padding: .25rem .75rem;
+    /* or 23% */
+
+/* letter-spacing: 0.01em;
+    color: #001D48; */
+/* } */

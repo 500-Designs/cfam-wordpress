@@ -1,0 +1,26 @@
+<section class="info-with-image-2 custom-block lazy-container {{ block.className }}">
+    <div class="container container-padding">
+        <div class="row">
+            <div class="col-lg-7">
+                {{ get_image_html(fields.image.ID, 'full', 'img-fluid lazy') }}
+            </div>
+            <div class="col-lg-5 d-flex align-items-center">
+                <div class="mt-4 mt-lg-0">
+
+                    {% if fields.heading %}
+                        <h2>{{ fields.heading }}</h2>
+                    {% endif %}
+                    
+                    <div class="text-darkgray2">
+                    {{ fields.description }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="container container-padding mt-4">
+    <div class="footnote description text-paragraph--small">
+        <InnerBlocks />
+    </div>  
+</div>
+</section>

@@ -1,0 +1,29 @@
+<section class="{{ block.className }} custom-block lazy-container {{ fields.text_color_theme == 'light' ? 'text-white' : '' }}  {{ block.className }}"
+	data-module="hero">
+	<div class="b--hero{% if subject_image %} --with-hero-image{% endif %}"
+		{% if fields.background_image %}style="background-image: url('{{ fields.background_image }}');"{% endif %}>
+		<div class="container container-padding">
+			<div class="row">
+				<div class="col text-container d-flex align-items-center">
+					<div class="container">
+						<div class="breadcrumbs text-uppercase text-eyebrow">
+							{{ breadcrumb }}
+						</div>
+
+						<h2 class="h1 text-uppercase">{{ fields.heading }}</h2>
+						<div class="boxed-description {{ fields.text_color_theme == 'light' ? 'text-white' : 'text-darkgray2' }}">
+							{{ fields.description }}
+						</div>
+					</div>
+				</div>
+				{% if subject_image %}
+				<div class="col-lg-6 d-flex justify-content-center justify-content-lg-end">
+					<div class="hero-image--bottom">
+						{{ subject_image }}
+					</div>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

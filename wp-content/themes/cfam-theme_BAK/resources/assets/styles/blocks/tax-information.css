@@ -1,0 +1,32 @@
+.custom-block.tax-information {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    .heading {
+        line-height: 70.4px;
+    }
+    @media (--to-xs) {
+        margin-top: 64px;
+        margin-bottom: 15px;
+    }
+
+    h4 {
+        margin-bottom: 30px;
+        @media (--to-xs) {
+            margin-bottom: 20px;
+        }
+    }
+    &:last-child {
+        margin-bottom: 100px;
+        @media (--to-xs) {
+            margin-bottom: 64px;
+        }
+    }
+	th, td {
+		text-align: center !important;
+	}
+    .subheading th {
+		font-size: 12px;
+		text-transform: uppercase;
+		line-height: 1.4;
+    }
+}

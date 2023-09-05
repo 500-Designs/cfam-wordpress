@@ -1,0 +1,14 @@
+<section class="custom-block lazy-container {{ block.name | replace({ 'acf/': '' }) }}">
+	<div class="container container-padding">
+		{% if fields.show_label == true %}
+		<p class="label">{{ fields.label }}</p>
+		{% endif %}
+
+		<select class="form-select fund-selector" >
+			<option value="no-load">{{ __('Class A (CAFIX) - At NAV', 'lucera-bootstrap') }}</option>
+			<option value="load">{{ __('Class A (CAFIX) - At Offer', 'lucera-bootstrap') }}</option>
+			<option value="class-c">CLASS C (CFCIX)</option>
+			<option value="class-i">CLASS I (CFIIX)</option>
+		</select>
+	</div>
+</section>

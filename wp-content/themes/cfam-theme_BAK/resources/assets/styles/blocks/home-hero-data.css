@@ -1,0 +1,39 @@
+.home-hero-data{
+    .home-hero-data-table{
+        .text-statistics + p{
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 170%;
+        }
+    }
+
+    > .container{
+        max-width: 540px;
+        @media (--md) {
+            max-width: 720px;
+        }
+        @media (--lg) {
+            max-width: 1140px;
+        }
+    }
+
+    .docs-links {
+        flex-direction: column;
+        gap: 0;
+        a {
+            margin: 0 !important;
+            font-size: 15px;
+        }
+        @media (--md) {
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 10px;
+        }
+        @media (--lg) {
+            flex-direction: column;
+            gap: 0;
+            align-items: end;
+        }
+    }
+
+}

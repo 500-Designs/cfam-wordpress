@@ -1,0 +1,309 @@
+{% extends '_layout.twig' %}
+
+{% block content %}
+
+{{ post.content }}
+
+<section class="custom-block lazy-container">
+  <div class="container container-padding">
+    <div class="table-responsive">
+      <table class="performance-table">
+        <thead>
+          <tr class="heading">
+            <th> </th>
+            <th class="text-center">1 Month</th>
+            <th class="text-center">3 Month</th>
+            <th class="text-center">YTD</th>
+            <th class="text-center">1 Year Annualized</th>
+            <th class="text-center">ITD</th>
+            <th class="text-center">Standard Deviation</th>
+            <th class="text-center">Sharpe Ratio</th>
+            <th class="text-center">Alpha</th>
+            <th class="text-center">Beta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cantor Fitzgerald Sustainable Infrastructure Fund</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+          <tr>
+            <td>S&P 500 Index</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+          </tr>
+          <tr>
+            <td>Barclays Aggregate Bond Index</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+          </tr>
+          <tr>
+            <td>S&P Global Listed Infrastructure Index</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+            <td class="text-center">TBD%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="description text-paragraph--small">
+      <p>Investing involves risk, including loss of principal. There is no guarantee that the fund will meet its investment objective. There is no guarantee that any investing strategy will be successful. The Fund is a closed-end investment company with no history of operations. The underlying funds in which the Fund may invest are subject to investment advisory and other expenses, which will be indirectly paid by the Fund. As a result, the cost of investing in the Fund will be higher than the cost of investing directly in the underlying funds.</p>
+
+      <p><a herf="#" class="seemore-link">{{ __('See More', 'lucera-bootstrap') }} <i class="icon-angle-down"></i></a></p>
+    </div>
+  </div>
+</section>
+
+<section class="performance-section custom-block lazy-container">
+
+  <div class="container container-padding">
+    <h2 class="heading">Historical Performance</h2>
+    <div class="row filter-section">
+      <div class="col-lg-8 col-filter">
+        <select class="form-select">
+          <option selected>Class A (CAFIX)</option>
+        </select>
+      </div>
+    </div>
+
+    <h4>Monthly Total Returns by Share Class</h4>
+    <div class="table-responsive">
+    <table class="performance-table">
+      <thead>
+        <tr class="heading">
+          <th style="min-width: 110px;">CLASS I</th>
+          <th>Jan</th>
+          <th>Feb</th>
+          <th>Mar</th>
+          <th>Apr</th>
+          <th>May</th>
+          <th>Jun</th>
+          <th>Jul</th>
+          <th>Aug</th>
+          <th>Sep</th>
+          <th>Oct</th>
+          <th>Nov</th>
+          <th>Dec</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2022</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+        </tr>
+        <tr>
+          <td>2021</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+        </tr>
+        <tr>
+          <td>2020</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Distribution History</h4>
+    <div class="table-responsive">
+    <table class="performance-table">
+      <thead>
+        <tr class="heading">
+          <th style="min-width: 110px;">CLASS I</th>
+          <th>Jan</th>
+          <th>Feb</th>
+          <th>Mar</th>
+          <th>Apr</th>
+          <th>May</th>
+          <th>Jun</th>
+          <th>Jul</th>
+          <th>Aug</th>
+          <th>Sep</th>
+          <th>Oct</th>
+          <th>Nov</th>
+          <th>Dec</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2022</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+        </tr>
+        <tr>
+          <td>2021</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+        </tr>
+        <tr>
+          <td>2020</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="performance-section custom-block lazy-container">
+
+  <div class="container container-padding">
+    <h2 class="heading">Tax Information: Form 1099-DIV</h2>
+
+    <p class="mb-4">Distributions are reported to you on Form 1099-DIV. The tax character of each year's distribution as a percent of each year's total distribution is detailed below:</p>
+
+    <div class="table-responsive">
+    <table class="performance-table">
+      <thead>
+        <tr class="heading">
+          <th>1099</th>
+          <th>1A</th>
+          <th>1B</th>
+          <th>2A</th>
+          <th>2B</th>
+          <th>3</th>
+          <th>5</th>
+        </tr>
+        <tr class="subheading">
+          <th>Year</th>
+          <th>Label</th>
+          <th>Label</th>
+          <th>Label</th>
+          <th>Label</th>
+          <th>Label</th>
+          <th>Label</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2022</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+        </tr>
+        <tr>
+          <td>2021</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+        </tr>
+        <tr>
+          <td>2020</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td>
+          <td>TBD%</td> 
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- <div class="description text-paragraph--small">
+      <p>The performance data quoted represents past performance. Current performance may be lower or higher than the performance data quoted above. Past performance is no guarantee of future results. The investment return and principal value of an investment will fluctuate so that investor's shares, when redeemed, may be worth more or less than their original cost. For performance information current to the most recent month-end, please call (855) 9-CANTOR.</p>
+      
+      <p>The fund's gross expense ratio is [ ]%.</p>
+    </div> -->
+  </div>
+</section>
+
+
+{% endblock %}

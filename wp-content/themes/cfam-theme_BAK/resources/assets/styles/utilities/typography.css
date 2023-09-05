@@ -1,0 +1,288 @@
+/* Font weights */
+
+.font-bold {
+    font-weight: bold;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+
+/* Line height */
+
+
+/* Font sizes */
+
+body {
+    font-size: 16px;
+    line-height: 1.7;
+    @media (--md) {
+        font-size: 18px;
+    }
+}
+
+a {
+    color: $blue;
+}
+
+p {
+    margin-bottom: 20px;
+    &:last-of-type {
+        margin-bottom: 0px;
+    }
+    strong {
+        font-weight: 700;
+    }
+}
+
+h1,
+.h1 {
+    font-family: "Helvetica Neue Condensed Bold";
+    font-size: 40px;
+    line-height: 1;
+    font-weight: bold;
+    margin-bottom: 20px;
+    @media (--md) {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+}
+
+.seo-h1 {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+h2,
+.h2 {
+    font-family: "Helvetica Neue Condensed Bold";
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 110%;
+    margin-bottom: 20px;
+    @media (--md) {
+        font-size: 64px;
+        margin-bottom: 20px;
+    }
+}
+
+h3,
+.h3 {
+    font-family: "Helvetica Neue Condensed Bold";
+    font-size: 30px;
+    line-height: 33px;
+    margin-bottom: 12px;
+    @media (--md) {
+        font-size: 40px;
+        line-height: 44px;
+    }
+}
+
+h4,
+.h4 {
+    font-size: 24px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+    @media (--md) {
+        /* font-size: 32px; */
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+    @media (--to-xs) {
+        font-size: 20px;
+    }
+}
+
+h5,
+.h5 {
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    @media (--md) {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+}
+
+h6,
+.h6 {
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: -0.0025em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    @media (--md) {
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+}
+
+.text-paragraph {
+    font-size: 16px!important;
+    line-height: 1.7;
+    @media (--md) {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+}
+
+.text-paragraph--small {
+    font-size: 12px!important;
+    line-height: 1.7;
+}
+
+.text-eyebrow {
+    font-size: 14px;
+    line-height: 17.09px;
+    font-weight: 500;
+}
+
+.text-reset {
+    text-transform: none!important;
+}
+
+.text-description {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 170%;
+}
+
+.text-statistics {
+    font-family: "Helvetica Neue";
+    font-weight: 400;
+    sup {
+        font-weight: 400;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+    }
+}
+
+.text-nav-main {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.text-nav-sub {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+}
+
+sup {
+    font-size: 0.6em;
+    vertical-align: super;
+    margin-top: 5px;
+}
+
+sub {
+    font-size: 0.6em;
+    vertical-align: sub;
+}
+
+
+/* Custom icons */
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    /* speak: never; */
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-linkedin:before {
+    content: "\e903";
+}
+
+.icon-search:before {
+    content: "\e90d";
+}
+
+.icon-new-tab:before {
+    content: "\e90b";
+}
+
+.icon-angle-down:before {
+    content: "\e90a";
+}
+
+.icon-close1:before {
+    content: "\e909";
+}
+
+.icon-file:before {
+    content: "\e908";
+}
+
+.icon-download:before {
+    content: "\e900";
+}
+
+.icon-info:before {
+    content: "\e90c";
+}
+
+.icon-angle-right:before {
+    content: "\e907";
+}
+
+.icon-burger:before {
+    content: "\e901";
+}
+
+.icon-close:before {
+    content: "\e902";
+}
+
+.icon-mail:before {
+    content: "\e904";
+}
+
+.icon-map-pin:before {
+    content: "\e905";
+}
+
+.icon-phone:before {
+    content: "\e906";
+}
+
+@media (--md) {
+    .boxed-description {
+        max-width: 825px;
+    }
+}
+
+em {
+    font-style: italic!important;
+}
+
+.description {
+    margin-top: 40px;
+    @media (--lg) {
+        margin-top: 30px;
+    }
+}
+
+.footnote {
+    &:before {
+        content: "";
+        display: inline-block;
+        border-top: 1px solid $blue;
+        width: 20px;
+    }
+}

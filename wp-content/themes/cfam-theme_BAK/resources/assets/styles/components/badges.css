@@ -1,0 +1,13 @@
+
+.post-category-badge{
+	background: linear-gradient(0deg, rgba(204, 204, 204, 0.3), rgba(204, 204, 204, 0.3)), #FFFFFF;
+	padding: 10px;
+	display: block;
+	width: fit-content;
+	text-transform: uppercase;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 17px;
+	letter-spacing: 0.05em;
+	color: $blue2;
+}

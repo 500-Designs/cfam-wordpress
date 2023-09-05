@@ -1,0 +1,111 @@
+.title-block {
+    margin-bottom: 60px;
+}
+
+.composition {
+    padding-bottom: 80px;
+    &-list {
+        @media (--lg) {
+            display: flex;
+            justify-content: space-between;
+        }
+        margin-bottom: 60px;
+        gap: 30px;
+        @media (--to-md) {
+            [class^="col-"] {
+                margin-top: 48px;
+            }
+        }
+        h5 {
+            margin-bottom: 30px;
+        }
+    }
+    &-single {
+        @media (--md) {
+            max-width: 304px;
+        }
+        @media (--to-lg) {
+            margin: 0 auto;
+            padding: 24px 0;
+        }
+    }
+    &-legend {
+        margin-top: 30px;
+        >li {
+            display: flex;
+            align-items: center;
+            color: $darkgray;
+        }
+        >li+li {
+            margin-top: 3px;
+        }
+        >li span.color {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border-radius: 2px;
+            background-color: rgba(0, 75, 141, 1);
+            margin-right: 10px;
+        }
+        >li span.label {
+            max-width: 60%;
+            line-height: 1.2;
+        }
+        >li span.percentage {
+            margin-left: auto;
+        }
+        /* >li:nth-child(2) span.color {
+            background-color: rgba(0, 75, 141, 0.9);
+        }
+        >li:nth-child(3) span.color {
+            background-color: rgba(0, 75, 141, 0.8);
+        }
+        >li:nth-child(4) span.color {
+            background-color: rgba(0, 75, 141, 0.7);
+        }
+        >li:nth-child(5) span.color {
+            background-color: rgba(0, 75, 141, 0.6);
+        }
+        >li:nth-child(6) span.color {
+            background-color: rgba(0, 75, 141, 0.5);
+        }
+        >li:nth-child(7) span.color {
+            background-color: rgba(0, 75, 141, 0.4);
+        }
+        >li:nth-child(8) span.color {
+            background-color: rgba(88, 130, 168, 0.5);
+        }
+        >li:nth-child(9) span.color {
+            background-color: rgba(104, 138, 173, 0.4);
+        }
+        >li:nth-child(10) span.color {
+            background-color: rgba(116, 149, 184, 0.3);
+        }
+        >li:nth-child(11) span.color {
+            background-color: rgba(144, 169, 191, 0.2);
+        }
+        >li:nth-child(12) span.color {
+            background-color: rgba(144, 169, 191, 0.1);
+        }
+        >li:nth-child(13) span.color {
+            background-color: rgba(186, 203, 218, 0.5);
+        }
+        >li:nth-child(14) span.color {
+            background-color: rgba(186, 203, 218, 0.3);
+        } */
+
+    }
+    h4 {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+}
+
+.radio-chart {
+    max-height: 400px;
+    max-width: 800px;
+}
+
+.composition-holdings .portfolio-table {
+    margin-top: 24px;
+}

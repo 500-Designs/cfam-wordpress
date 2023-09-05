@@ -1,0 +1,43 @@
+<section class="custom-block lazy-container" data-module="example">
+    <pre>
+        {{ dump(fields) }}
+    </pre>
+
+    {# Example for how to handle images: #}
+    {# Reference: https://timber.github.io/docs/guides/cookbook-images/ #}
+    {% set image = Image(fields.image_field) %}
+    <img alt="{{ image.alt }}"
+        class="lazy" {# If you're lazy loading images, they must be inside a parent div with the class "lazy-container" #}
+        src="{{ image.src|resize(20) }}" {# Small source for initial load #}
+        data-src="{{ image.src|resize(200) }}" {# Larger image source for lazy load #}
+        height="{{ image.height }}"
+        width="{{ image.width }}" />
+    {# For more data, explore {{ dump(image) }} #}
+
+    {# If you're using a relationship field, you might need to reference it like this: #}
+    {# Reference: https://timber.github.io/docs/guides/acf-cookbook/#relationship-field #}
+    {% set post = Post(fields.post_object) %}
+
+    {# For WYSIWYG content, use 'meta' #}
+    {# Reference: https://timber.github.io/docs/guides/acf-cookbook/#wysiwyg-field-and-other-requiring-text #}
+    {% set content = fields.meta('my_wysiwyg_field') %}
+
+    {# For repeater fields #}
+    {# Reference: https://timber.github.io/docs/guides/acf-cookbook/#repeater-field #}
+    {% for item in fields.meta('my_repeater') %}
+		<div class="item">
+			<h4>{{ item.name }}</h4>
+			<h6>{{ item.info }}</h6>
+			<img src="{{ Image(item.picture).src }}" />
+		</div>
+	{% endfor %}
+
+    {# To loop through the sample query from example.php #}
+    {% for key, post in posts %}
+        {{ post.title }}
+
+        {{ key }} {#  Loop index #}
+        {# You can also check for the first or the last in the loop like this: #}
+        {% if loop.first %}<div>First in the loop</div>{% endif %}
+    {% endfor %}
+</section>

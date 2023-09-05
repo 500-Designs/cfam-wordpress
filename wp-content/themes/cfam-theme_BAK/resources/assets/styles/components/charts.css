@@ -1,0 +1,42 @@
+.chart-pie {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    height: 170px;
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (--md) {
+        height: 170px;
+        width: 170px;
+        margin-right: 40px;
+    }
+
+    > .text-statistics{
+        height: 94px;
+        width: 94px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.5px solid $gray2;
+        border-radius: 50%;
+
+        sup{
+            margin-top: 20px;
+        }
+    }
+
+    > canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        width: 100%;
+    }
+
+    &[data-percent="70"] > canvas{
+        transform: rotate(105deg);
+    }
+}

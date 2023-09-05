@@ -1,0 +1,64 @@
+<section class="custom-block lazy-container {{ fields.text_color_theme == 'light' ? 'text-white' : '' }} {{ block.className }}" data-module="hero">
+	<div class="b--hero --with-form" {% if fields.background_image %}style="background-image: url('{{ fields.background_image }}');"{% endif %}>
+		<div class="container container-padding">
+			<div class="row">
+				<div class="col-lg-5">
+					<div class="text-container">
+						<div class="breadcrumbs text-uppercase text-eyebrow">
+							{{ breadcrumb }}
+						</div>
+
+						<h2 class="h1">{{ fields.heading }}</h2>
+
+						{{ fields.description }}
+
+						<ul class="hero-contact-details">
+							{% if fields.address %}
+								<li>
+									<a href="https://maps.google.com/?q={{ fields.address }}" target="_blank">
+									<i class="icon-map-pin me-2"></i>
+									{{ fields.address }}</a>
+								</li>
+							{% endif %}
+							{% if fields.phone_number %}
+								<li>
+									<a href="#" data-tel="{{ b64_encode(fields.phone_number) }}" onclick="this.href = 'tel:' + atob(this.dataset.tel)">
+										<i class="icon-phone me-2"></i>
+										{{ fields.phone_number_label }}
+									</a>
+								</li>
+							{% endif %}
+							{% if fields.email_address %}
+								<li>
+									<a href="#" data-email="{{ b64_encode(fields.email_address) }}" onclick="this.href = 'mailto:' + atob(this.dataset.email)">
+										<i class="icon-mail me-2"></i>
+										{{ fields.email_address_label }}
+									</a>
+								</li>
+							{% endif %}
+						</ul>
+					{% if fields.comments %}
+						<div class="mt-4">
+							{{ fields.comments }}
+						</div>
+					{% endif %}
+					</div>
+				</div>
+				<div class="col-lg-6 offset-lg-1">
+					<div class="hero-form-wrap">
+						{{ fields.form_shortcode }}
+					</div>
+
+
+					<div class="hero-address d-lg-none">
+						{{ fields.address_description }}
+						<p>
+							<i class="icon-map-pin me-2"></i>
+							{{ fields.address }}</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>

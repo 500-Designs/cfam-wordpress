@@ -1,0 +1,7 @@
+.blue-box {
+    background-color: $blue;
+    padding: 24px;
+    @media (--lg) {
+        padding: 102.5px 50px;
+    }
+}
